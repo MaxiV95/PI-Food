@@ -1,13 +1,16 @@
 import style from "./App.module.css";
-
 import { useLocation, Route, Routes } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllDiets } from "./redux/actionsRecipes";
 
 function App() {
 	const location = useLocation();
+	const dispatch = useDispatch();
 
 	return (
 		<div className={style.App}>
-      Hello world
+			Hello world
+			<button onClick={() => dispatch(getAllDiets())}>click</button>
 			{/* {location.pathname !== "/" && <NavBar />} */}
 			<Routes>
 				{/* <Route path="/" element={<Landing />} /> */}
