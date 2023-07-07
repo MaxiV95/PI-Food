@@ -1,11 +1,51 @@
+html,
+body,
 :root {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 	font-synthesis: none;
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
+	overflow-x: hidden;
+	min-height: 100vh;
+	width: 100vw;
+	margin: 0%;
+	--nav-bar-h: 5rem;
+	--footer-h: 10rem;
 	color-scheme: light dark;
-	background-color: #242424;
+}
+.palette0 {
+	--color1: #172e4a;
+	--color2: #2d4562;
+	--color3: #5977a1;
+	--color4: #8bb5d5;
+	--color5: #b5daf2;
+}
+.palette1 {
+	--color1: #16618f;
+	--color2: #3278a8;
+	--color3: #4e90c1;
+	--color4: #6aa7d9;
+	--color5: #86bef2;
+}
+.palette2 {
+	--color1: #1a02d6;
+	--color2: #3e1de0;
+	--color3: #6138eb;
+	--color4: #8553f5;
+	--color5: #a86eff;
+}
+.palette3 {
+	--color1: #1e587b;
+	--color2: #31698d;
+	--color3: #457a9f;
+	--color4: #588bb1;
+	--color5: #6b9cc3;
+}
+
+button {
+	background-color: var(--color3);
 	color: #ffffff;
+	border: none;
 }
