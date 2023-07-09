@@ -11,11 +11,12 @@ body,
 	min-height: 100vh;
 	width: 100vw;
 	margin: 0%;
-	--nav-bar-h: 5rem;
+	--navBar-h: 3rem;
 	--footer-h: 10rem;
 	color-scheme: light dark;
 }
 .palette0 {
+	--color: #ffffff;
 	--color1: #172e4a;
 	--color2: #2d4562;
 	--color3: #5977a1;
@@ -23,6 +24,7 @@ body,
 	--color5: #b5daf2;
 }
 .palette1 {
+	--color: #ffffff;
 	--color1: #16618f;
 	--color2: #3278a8;
 	--color3: #4e90c1;
@@ -30,6 +32,7 @@ body,
 	--color5: #86bef2;
 }
 .palette2 {
+	--color: #ffffff;
 	--color1: #1a02d6;
 	--color2: #3e1de0;
 	--color3: #6138eb;
@@ -37,6 +40,7 @@ body,
 	--color5: #a86eff;
 }
 .palette3 {
+	--color: #ffffff;
 	--color1: #1e587b;
 	--color2: #31698d;
 	--color3: #457a9f;
@@ -44,8 +48,31 @@ body,
 	--color5: #6b9cc3;
 }
 
+.app {
+	background-color: var(--color1);
+	padding-top: calc(var(--navBar-h) + 0.7rem);
+	min-height: calc(100vh - var(--navBar-h) - 0.7rem);
+	overflow-y: auto;
+}
+
+span {
+	display: flex;
+	align-items: center;
+}
+
 button {
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.34);
 	background-color: var(--color3);
-	color: #ffffff;
+	color: var(--color);
 	border: none;
+	border-radius: 4px;
+	font-size: 20px;
+	cursor: pointer;
+	transition: box-shadow 0.3s ease;
+}
+button:hover {
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34);
+}
+button:active {
+	box-shadow: none;
 }

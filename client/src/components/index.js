@@ -3,7 +3,7 @@
 // import Form from "./form/Form";
 // import Home from "./home/Home";
 import Landing from "./landing/Landing";
-// import NavBar from "./navBar/NavBar";
+import NavBar from "./navBar/NavBar";
 // import NotFound from "./notFound/NotFound";
 // import Upload from "./upload/Upload";
 // import Card from "./zHelpers/card/Card";
@@ -13,4 +13,5 @@ import Landing from "./landing/Landing";
 
 export {
   Landing,
+  NavBar,
 };

@@ -1,7 +1,7 @@
 import style from "./App.module.css";
 import { useLocation, Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import { Landing } from "./components/";
+import { NavBar, Landing } from "./components/";
 
 function App() {
 	const location = useLocation();
@@ -24,8 +24,7 @@ function App() {
 
 	return (
 		<div className={`${style.app} ${style[palette]}`}>
-			<button onClick={togglePalette}>Theme</button>
-			{/* {location.pathname !== "/" && <NavBar />} */}
+			{location.pathname !== "/" && <NavBar togglePalette={togglePalette} />}
 			<Routes>
 				<Route path="/" element={<Landing />} />
 				{/* <Route path="/home" element={<Home />} /> */}

@@ -4,7 +4,7 @@ import style from "./Landing.module.css";
 const Landing = () => {
   return (
     <>
-      <div className={style.container}>
+      <div className={style.landingContainer}>
         <Link to="/home">
           <button className={style.btn}>
             <span>HOME PAGE</span>
