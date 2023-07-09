@@ -1,11 +1,10 @@
 .homeContainer {
-	/* background-image: url("./img/home.jpg"); */
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: absolute;
-	/* height: 100%; */
 	width: 100%;
+	background-color: var(--color1);
 }
 
 .homeContainer h1 {
@@ -19,5 +18,6 @@
 	font-family: monospace;
 	background-color: var(--color3);
 	color: var(--color5);
-	text-shadow: 5px 2px 2px rgb(23, 23, 23);
+	text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.764);
+	opacity: 0.75;
 }
