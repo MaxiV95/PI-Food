@@ -1,7 +1,7 @@
 import style from "./App.module.css";
 import { useLocation, Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import { NavBar, Landing } from "./components/";
+import { NavBar, Landing, NotFound } from "./components/";
 
 function App() {
 	const location = useLocation();
@@ -32,7 +32,7 @@ function App() {
 				{/* <Route path="/detail/:id" element={<Detail />} /> */}
 				{/* <Route path="/about" element={<About />} /> */}
 				{/* <Route path="/upload/:id" element={<Upload />} /> */}
-				{/* <Route path="*" element={<NotFound />} /> */}
+				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>
 	);
