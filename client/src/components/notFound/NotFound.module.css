@@ -5,8 +5,9 @@
 	overflow: hidden;
 	background-attachment: fixed;
 	position: absolute;
+	padding-top: 15rem;
 	height: 80%;
-	width: 100%;
+	width: 100vw;
 	margin: 0;
 	padding: 0;
 }

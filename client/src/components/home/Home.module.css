@@ -1,4 +1,6 @@
 .homeContainer {
+	display: flex;
+	flex-direction: row;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -7,17 +9,25 @@
 	background-color: var(--color1);
 }
 
+.homeContainer .homeContent {
+	width: 100%;
+	margin-left: 13rem;
+}
+
 .homeContainer h1 {
 	position: relative;
 	justify-content: center;
 	flex-direction: row;
 	display: flex;
-	margin: 0;
+	margin-top: 0.5rem;
+	margin-bottom: 0.2rem;
+	margin-right: 0.5rem;
 	padding: 0;
 	font-size: 70px;
 	font-family: monospace;
+	border-radius: 0.4rem;
 	background-color: var(--color3);
-	color: var(--color5);
+	color: var(--color);
 	text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.764);
 	opacity: 0.75;
 }

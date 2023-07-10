@@ -40,7 +40,9 @@ export const recipeStore = createSlice({
 			state.page = 1;
 		},
 		setSelected: (state, { payload }) => {
-			state = { ...state, ...payload };
+			state.selected = { ...state.selected, ...payload.selected };
+			state.recipesShown = payload.recipesShown;
+			state.page = payload.page;
 		},
 		setPage: (state, { payload }) => {
 			state.dietsAll = payload;
@@ -80,7 +82,7 @@ export const getAllRecipes = () => {
 	return async (dispatch, getState) => {
 		const { recipesAll } = getState().recipeStore;
 
-		if (recipesAll.length > 0) return dispatch(setDiets(recipesAll));
+		if (recipesAll.length > 0) return dispatch(setRecipesAll(recipesAll));
 
 		try {
 			const response = await axios.get("/recipes");
@@ -96,7 +98,7 @@ export const getAllRecipes = () => {
 export const getRecipeByName = (name) => {
 	return async (dispatch) => {
 		try {
-			const response = await axios.get(`/recipes?name=${name}`);
+			//const response = await axios.get(`/recipes?name=${name}`);
 			const recipesByName = response.data;
 			return dispatch(setRecipesByName(recipesByName));
 		} catch (error) {
@@ -110,35 +112,35 @@ export const updateSelected = (option) => {
 	return (dispatch, getState) => {
 		const { recipesByName, recipesAll, selected } = getState().recipeStore;
 
-		let selectedRecipes = recipesByName ? recipesByName : recipesAll;
-		selected = { ...selected, ...option };
+		let selectedRecipes = recipesByName.length ? [...recipesByName] : [...recipesAll];
+		let select = { ...selected, ...option };
 
 		// Por tipo de dieta
-		if (selected.byDiet.length)
+		if (select.byDiet.length)
 			selectedRecipes = selectedRecipes.filter((recipe) =>
-				recipe.diets.includes(selected.byDiet)
+				recipe.diets.includes(select.byDiet)
 			);
 
 		// Por creación
-		if (selected.byCreated.length)
+		if (select.byCreated.length)
 			selectedRecipes = selectedRecipes.filter((recipe) =>
-				selected.byCreated === "DB" ? isNaN(recipe.id) : !isNaN(recipe.id)
+				select.byCreated === "DB" ? isNaN(recipe.id) : !isNaN(recipe.id)
 			);
 
 		// Health Score
-		if (selected.byOrder === "MinToMax")
+		if (select.byOrder === "MinToMax")
 			selectedRecipes.sort((a, b) => a.healthScore - b.healthScore);
-		if (selected.byOrder === "MaxToMin")
+		if (select.byOrder === "MaxToMin")
 			selectedRecipes.sort((a, b) => b.healthScore - a.healthScore);
 
 		//Alfabéticamente
-		if (selected.byOrder === "Ascending")
+		if (select.byOrder === "Ascending")
 			selectedRecipes.sort((a, b) => a.title.localeCompare(b.title));
-		if (selected.byOrder === "Descending")
+		if (select.byOrder === "Descending")
 			selectedRecipes.sort((a, b) => b.title.localeCompare(a.title));
 
 		dispatch(
-			setSelected({ selected: selected, recipesShown: selectedRecipes, page: 1 })
+			setSelected({ selected: select, recipesShown: selectedRecipes, page: 1 })
 		);
 	};
 };

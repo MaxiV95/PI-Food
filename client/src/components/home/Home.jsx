@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllRecipes, getAllDiets } from "../../redux/actionsRecipes";
-import { CardsContainer } from "./helpers";
+import { SearchBar, CardsContainer } from "./helpers";
 import style from "./Home.module.css";
 
 const Home = () => {
 	const dispatch = useDispatch();
 	const recipesShown = useSelector((state) => state.recipeStore.recipesShown);
 	const diets = useSelector((state) => state.recipeStore.dietsAll);
-  
+
 	// Paginado!
 	const page = useSelector((state) => state.recipeStore.page);
 	const perPage = 9;
@@ -16,21 +16,22 @@ const Home = () => {
 	const endIndex = startIndex + perPage;
 	const max = Math.ceil(recipesShown?.length / perPage);
 	const recipes = recipesShown?.slice(startIndex, endIndex);
-  
-    useEffect(() => {
-      if (!diets.length) {
-        dispatch(getAllRecipes());
-        dispatch(getAllDiets());
-      }
-    }, []);
+
+	useEffect(() => {
+		if (!diets.length) {
+			dispatch(getAllRecipes());
+			dispatch(getAllDiets());
+		}
+	}, []);
 
 	return (
 		<div className={style.homeContainer}>
-			{/* <SearchBar /> */}
-			<br />
-			<h1>RECIPES FINDER</h1>
-			<CardsContainer recipes={recipes} />
-			<footer>{/* <Paginado page={page} max={max} /> */}</footer>
+			<SearchBar />
+			<div className={style.homeContent}>
+				<h1>RECIPES FINDER</h1>
+				<CardsContainer recipes={recipes} />
+				<footer>{/* <Paginado page={page} max={max} /> */}</footer>
+			</div>
 		</div>
 	);
 };
