@@ -45,7 +45,7 @@ export const recipeStore = createSlice({
 			state.page = payload.page;
 		},
 		setPage: (state, { payload }) => {
-			state.dietsAll = payload;
+			state.page = payload;
 		},
 	},
 });
