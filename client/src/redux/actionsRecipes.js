@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import TYPE from "./types";
 
 const initialState = {
 	dietsAll: [], // todas
@@ -98,7 +99,7 @@ export const getAllRecipes = () => {
 export const getRecipeByName = (name) => {
 	return async (dispatch) => {
 		try {
-			//const response = await axios.get(`/recipes?name=${name}`);
+			const response = await axios.get(`/recipes?name=${name}`);
 			const recipesByName = response.data;
 			return dispatch(setRecipesByName(recipesByName));
 		} catch (error) {
@@ -124,19 +125,19 @@ export const updateSelected = (option) => {
 		// Por creación
 		if (select.byCreated.length)
 			selectedRecipes = selectedRecipes.filter((recipe) =>
-				select.byCreated === "DB" ? isNaN(recipe.id) : !isNaN(recipe.id)
+				select.byCreated === TYPE.DB ? isNaN(recipe.id) : !isNaN(recipe.id)
 			);
 
 		// Health Score
-		if (select.byOrder === "MinToMax")
+		if (select.byOrder === TYPE.MinToMax)
 			selectedRecipes.sort((a, b) => a.healthScore - b.healthScore);
-		if (select.byOrder === "MaxToMin")
+		if (select.byOrder === TYPE.MaxToMin)
 			selectedRecipes.sort((a, b) => b.healthScore - a.healthScore);
 
 		//Alfabéticamente
-		if (select.byOrder === "Ascending")
+		if (select.byOrder === TYPE.Ascending)
 			selectedRecipes.sort((a, b) => a.title.localeCompare(b.title));
-		if (select.byOrder === "Descending")
+		if (select.byOrder === TYPE.Descending)
 			selectedRecipes.sort((a, b) => b.title.localeCompare(a.title));
 
 		dispatch(

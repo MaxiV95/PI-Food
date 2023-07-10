@@ -5,6 +5,7 @@ import {
 	getRecipeByName,
 	updateSelected,
 } from "../../../../redux/actionsRecipes";
+import TYPE from "../../../../redux/types";
 import style from "./SearchBar.module.css";
 import SearchIcon from "./SearchIcon";
 
@@ -45,7 +46,7 @@ const SearchBar = () => {
 				</button>
 			</span>
 
-			<select value={selected.byDiet} name="byDiet" onChange={handleChange}>
+			<select value={selected.byDiet} name={TYPE.byDiet} onChange={handleChange}>
 				<option value="">Filter by diet</option>
 				{diets?.map((diet) => (
 					<option value={diet.name} key={diet.id}>
@@ -54,18 +55,18 @@ const SearchBar = () => {
 				))}
 			</select>
 
-			<select value={selected.byCreated} name="byCreated" onChange={handleChange}>
+			<select value={selected.byCreated} name={TYPE.byCreated} onChange={handleChange}>
 				<option value="">Filter by created</option>
-				<option value="DB">Created by User</option>
-				<option value="API">Created by App</option>
+				<option value={TYPE.DB}>Created by User</option>
+				<option value={TYPE.API}>Created by App</option>
 			</select>
 
-			<select value={selected.byOrder} name="byOrder" onChange={handleChange}>
+			<select value={selected.byOrder} name={TYPE.byOrder} onChange={handleChange}>
 				<option value="">Order by..</option>
-				<option value="MinToMax">HealthScore largest</option>
-				<option value="MaxToMin">HealthScore smallest</option>
-				<option value="Ascending">Title ascending</option>
-				<option value="Descending">Title descending</option>
+				<option value={TYPE.MinToMax}>HealthScore largest</option>
+				<option value={TYPE.MaxToMin}>HealthScore smallest</option>
+				<option value={TYPE.Ascending}>Title ascending</option>
+				<option value={TYPE.Descending}>Title descending</option>
 			</select>
 		</div>
 	);

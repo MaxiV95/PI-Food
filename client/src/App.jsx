@@ -8,18 +8,13 @@ function App() {
 	const [palette, setPalette] = useState("palette0");
 
 	const togglePalette = () => {
-		setPalette((prevPalette) => {
-			switch (prevPalette) {
-				case "palette0":
-					return "palette1";
-				case "palette1":
-					return "palette2";
-				case "palette2":
-					return "palette3";
-				case "palette3":
-					return "palette0";
-			}
-		});
+		const palettes = {
+			palette0: "palette1",
+			palette1: "palette2",
+			palette2: "palette3",
+			palette3: "palette0",
+		};
+		setPalette(palettes[palette]);
 	};
 
 	return (
