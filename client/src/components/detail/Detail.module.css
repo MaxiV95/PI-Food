@@ -1,0 +1,84 @@
+.detailContainer {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+  background-color: var(--color1);
+}
+
+.detailContainer h1 {
+  margin: 0 auto;
+  color: var(--color4);
+  margin-bottom: 0.9rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.625);
+}
+
+.detailContainer h2 {
+  margin: 0.5rem auto;
+  color: var(--color5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.625);
+}
+
+.detailContainer h3 {
+  margin: 0.5rem auto;
+  color: var(--color5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.625);
+}
+
+.detailContainer p {
+  margin: 0.5rem auto;
+  color: var(--color);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.625);
+}
+
+.detailContainer .block1 {
+  padding: 1rem;
+  width: 35%;
+}
+
+.detailContainer .block1 img {
+  border-radius: 1.5rem;
+  height: auto;
+  max-width: 100%;
+}
+
+.block1 span {
+  margin-bottom: 0.8rem;
+  opacity: 0.80;
+}
+.block1 span button {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.878);
+}
+.block1 span .close {
+  color: #01ba20;
+}
+.block1 span .delete {
+  color: #ab0303;
+}
+.block1 span .update {
+  color: #dc7200;
+}
+
+.detailContainer .block2 {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  width: 55%;
+}
+
+@media (max-width: 900px) { 
+  .detailContainer {
+    flex-direction: column;
+  }
+  .detailContainer .block1 {
+    padding: 1rem;
+    width: 90%;
+  }
+  .detailContainer .block2 {
+    margin: 0;
+    padding: 1rem;
+    padding-top: 0;
+    width: 90%;
+  }
+}

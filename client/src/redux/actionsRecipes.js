@@ -70,7 +70,12 @@ export const getAllDiets = () => {
       //const response = await axios.get("/diets");
       //const allDiets = response.data;
       const response = await fetch("/diets.json");
-      const allDiets = await response.json();
+      let allDiets = await response.json();
+
+      allDiets = allDiets.map((diet) => {
+        const rename = diet.name.charAt(0).toUpperCase() + diet.name.slice(1);
+        return { ...diet, name: rename };
+      });
 
       allDiets.sort((a, b) => a.name.localeCompare(b.name));
       return dispatch(setDiets(allDiets));
@@ -103,51 +108,77 @@ export const getAllRecipes = () => {
 
 // Trae y guarda recetas por name en allRecipes
 export const getRecipeByName = (name) => {
-	return async (dispatch) => {
-		try {
-			const response = await axios.get(`/recipes?name=${name}`);
-			const recipesByName = response.data;
-			return dispatch(setRecipesByName(recipesByName));
-		} catch (error) {
-			console.error(error);
-			alert(`There is no recipe named ${name}`);
-		}
-	};
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(`/recipes?name=${name}`);
+      const recipesByName = response.data;
+      return dispatch(setRecipesByName(recipesByName));
+    } catch (error) {
+      console.error(error);
+      alert(`There is no recipe named ${name}`);
+    }
+  };
 };
 
 export const updateSelected = (option) => {
-	return (dispatch, getState) => {
-		const { recipesByName, recipesAll, selected } = getState().recipeStore;
+  return (dispatch, getState) => {
+    const { recipesByName, recipesAll, selected } = getState().recipeStore;
 
-		let selectedRecipes = recipesByName.length ? [...recipesByName] : [...recipesAll];
-		let select = { ...selected, ...option };
+    let selectedRecipes = recipesByName.length
+      ? [...recipesByName]
+      : [...recipesAll];
+    let select = { ...selected, ...option };
 
-		// Por tipo de dieta
-		if (select.byDiet.length)
-			selectedRecipes = selectedRecipes.filter((recipe) =>
-				recipe.diets.includes(select.byDiet)
-			);
+    // Por tipo de dieta
+    if (select.byDiet.length)
+      selectedRecipes = selectedRecipes.filter((recipe) =>
+        recipe.diets.includes(select.byDiet)
+      );
 
-		// Por creación
-		if (select.byCreated.length)
-			selectedRecipes = selectedRecipes.filter((recipe) =>
-				select.byCreated === TYPE.DB ? isNaN(recipe.id) : !isNaN(recipe.id)
-			);
+    // Por creación
+    if (select.byCreated.length)
+      selectedRecipes = selectedRecipes.filter((recipe) =>
+        select.byCreated === TYPE.DB ? isNaN(recipe.id) : !isNaN(recipe.id)
+      );
 
-		// Health Score
-		if (select.byOrder === TYPE.MinToMax)
-			selectedRecipes.sort((a, b) => a.healthScore - b.healthScore);
-		if (select.byOrder === TYPE.MaxToMin)
-			selectedRecipes.sort((a, b) => b.healthScore - a.healthScore);
+    // Health Score
+    if (select.byOrder === TYPE.MinToMax)
+      selectedRecipes.sort((a, b) => a.healthScore - b.healthScore);
+    if (select.byOrder === TYPE.MaxToMin)
+      selectedRecipes.sort((a, b) => b.healthScore - a.healthScore);
 
-		//Alfabéticamente
-		if (select.byOrder === TYPE.Ascending)
-			selectedRecipes.sort((a, b) => a.title.localeCompare(b.title));
-		if (select.byOrder === TYPE.Descending)
-			selectedRecipes.sort((a, b) => b.title.localeCompare(a.title));
+    //Alfabéticamente
+    if (select.byOrder === TYPE.Ascending)
+      selectedRecipes.sort((a, b) => a.title.localeCompare(b.title));
+    if (select.byOrder === TYPE.Descending)
+      selectedRecipes.sort((a, b) => b.title.localeCompare(a.title));
 
-		dispatch(
-			setSelected({ selected: select, recipesShown: selectedRecipes, page: 1 })
-		);
-	};
+    dispatch(
+      setSelected({ selected: select, recipesShown: selectedRecipes, page: 1 })
+    );
+  };
+};
+
+// Busca receta por id
+export const getRecipeById = async (id) => {
+  try {
+    // const response = await axios.get(`/recipes/${id}`);
+    // return response.data;
+    const response = await fetch("/recipeID.json");
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+    alert(error.message + `There is no recipe with the ID: ${id}`);
+  }
+};
+
+// Elimina receta por id
+export const deleteRecipeById = async (id) => {
+  try {
+    const response = await axios.delete(`/recipes/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    alert(error.message + `There is no recipe with the ID: ${id}`);
+  }
 };
