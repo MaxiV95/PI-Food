@@ -61,38 +61,44 @@ export default recipeStore.reducer;
 
 // Trae y guarda las dietas en dietsAll si esta vacío
 export const getAllDiets = () => {
-	return async (dispatch, getState) => {
-		const { dietsAll } = getState().recipeStore;
+  return async (dispatch, getState) => {
+    const { dietsAll } = getState().recipeStore;
 
-		if (dietsAll.length > 0) return;
+    if (dietsAll.length > 0) return;
 
-		try {
-			const response = await axios.get("/diets");
-			const allDiets = response.data;
-			allDiets.sort((a, b) => a.name.localeCompare(b.name));
-			return dispatch(setDiets(allDiets));
-		} catch (error) {
-			console.error(error);
-		}
-	};
+    try {
+      //const response = await axios.get("/diets");
+      //const allDiets = response.data;
+      const response = await fetch("/diets.json");
+      const allDiets = await response.json();
+
+      allDiets.sort((a, b) => a.name.localeCompare(b.name));
+      return dispatch(setDiets(allDiets));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 };
 
 // Trae y guarda las recetas en recipesAll y recipesShown
 // Si ya existen en recipesAll no vuelve a llamar al back
 export const getAllRecipes = () => {
-	return async (dispatch, getState) => {
-		const { recipesAll } = getState().recipeStore;
+  return async (dispatch, getState) => {
+    const { recipesAll } = getState().recipeStore;
 
-		if (recipesAll.length > 0) return dispatch(setRecipesAll(recipesAll));
+    if (recipesAll.length > 0) return dispatch(setRecipesAll(recipesAll));
 
-		try {
-			const response = await axios.get("/recipes");
-			const allRecipes = response.data;
-			return dispatch(setRecipesAll(allRecipes));
-		} catch (error) {
-			console.error(error);
-		}
-	};
+    try {
+      // const response = await axios.get("/recipes");
+      // const allRecipes = response.data;
+      const response = await fetch("/recipes.json");
+      const allRecipes = await response.json();
+
+      return dispatch(setRecipesAll(allRecipes));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 };
 
 // Trae y guarda recetas por name en allRecipes

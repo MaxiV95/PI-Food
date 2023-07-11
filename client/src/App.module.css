@@ -16,36 +16,36 @@ body,
 	color-scheme: light dark;
 }
 .palette0 {
-	--color: #ffffff;
-	--color1: #172e4a;
-	--color2: #2d4562;
-	--color3: #5977a1;
-	--color4: #8bb5d5;
-	--color5: #b5daf2;
+  --color: #ffffff;
+  --color1: #00171f;
+  --color2: #003459;
+  --color3: #007ea7;
+  --color4: #00a8e8;
+  --color5: #add7ff;
 }
 .palette1 {
-	--color: #ffffff;
-	--color1: #16618f;
-	--color2: #3278a8;
-	--color3: #4e90c1;
-	--color4: #6aa7d9;
-	--color5: #86bef2;
+  --color: #ffffff;
+  --color1: #172e4a;
+  --color2: #2d4562;
+  --color3: #5977a1;
+  --color4: #8bb5d5;
+  --color5: #b5daf2;
 }
 .palette2 {
-	--color: #ffffff;
-	--color1: #1a02d6;
-	--color2: #3e1de0;
-	--color3: #6138eb;
-	--color4: #8553f5;
-	--color5: #a86eff;
+  --color: #ffffff;
+  --color1: #16618f;
+  --color2: #3278a8;
+  --color3: #4e90c1;
+  --color4: #6aa7d9;
+  --color5: #86bef2;
 }
 .palette3 {
-	--color: #ffffff;
-	--color1: #1e587b;
-	--color2: #31698d;
-	--color3: #457a9f;
-	--color4: #588bb1;
-	--color5: #6b9cc3;
+  --color: #ffffff;
+  --color1: #1a02d6;
+  --color2: #3e1de0;
+  --color3: #6138eb;
+  --color4: #8553f5;
+  --color5: #a86eff;
 }
 
 .app {
@@ -75,6 +75,7 @@ button {
 }
 button:hover {
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34);
+	background: radial-gradient(circle, var(--color4), var(--color3));
 }
 button:active {
 	box-shadow: none;

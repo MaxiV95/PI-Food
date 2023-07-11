@@ -1,0 +1,42 @@
+[
+  {
+    "id": "199c5184-d313-4af9-b155-24fc1f054d51",
+    "name": "gluten free"
+  },
+  {
+    "id": "bf88d243-a8bd-4f97-9a5d-af9490988e37",
+    "name": "lacto ovo vegetarian"
+  },
+  {
+    "id": "c7367587-662a-408b-8681-2dd9f0db4d7c",
+    "name": "paleolithic"
+  },
+  {
+    "id": "fe7591bb-6a9b-4466-be6a-6cbedcd00ada",
+    "name": "vegan"
+  },
+  {
+    "id": "8e6e081d-5e19-465a-833d-7ad806d7aa86",
+    "name": "dairy free"
+  },
+  {
+    "id": "ebfdbb6d-e29b-478b-881f-42d5e766ede4",
+    "name": "pescatarian"
+  },
+  {
+    "id": "9c280a35-c43d-4e65-a086-d3139bef08b4",
+    "name": "primal"
+  },
+  {
+    "id": "2a59fe73-efa1-448a-878b-8ed6c23e6743",
+    "name": "whole 30"
+  },
+  {
+    "id": "90ef6a62-0b8b-4a6b-86b8-513c4f7dea63",
+    "name": "ketogenic"
+  },
+  {
+    "id": "963baf5e-06ff-4b7f-99b8-a4c9556b34b4",
+    "name": "fodmap friendly"
+  }
+]
