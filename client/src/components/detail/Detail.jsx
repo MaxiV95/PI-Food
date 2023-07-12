@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import {
   getAllRecipes,
   setRecipeId,
@@ -9,7 +9,8 @@ import {
 } from "../../redux/actionsRecipes";
 import style from "./Detail.module.css";
 
-const Detail = () => {
+const Detail = ({ updateDetail, block }) => {
+  const location = useLocation();
   const dispatch = useDispatch();
   const { id } = useParams();
   const recipeId = useSelector((state) => state.recipeStore.recipeId);
@@ -33,25 +34,27 @@ const Detail = () => {
   };
 
   return (
-    <div className={style.detailContainer}>
-      <div className={style.block1}>
-        <span>
-          <Link to="/home">
-            <button className={style.close}>CLOSE</button>
-          </Link>
-
-          {isNaN(recipeId?.id) && (
+    <div className={`${style.detailContainer} ${updateDetail}`}>
+      <div className={`${style.block1} ${block}`}>
+        {!location.pathname.startsWith("/update/") && (
+          <span>
             <Link to="/home">
-              <button className={style.delete}>DELETE</button>
+              <button className={style.close}>CLOSE</button>
             </Link>
-          )}
 
-          {isNaN(recipeId?.id) && (
-            <Link to={`/update/${id}`}>
-              <button className={style.update}>UPDATE</button>
-            </Link>
-          )}
-        </span>
+            {isNaN(recipeId?.id) && (
+              <Link to="/home">
+                <button className={style.delete}>DELETE</button>
+              </Link>
+            )}
+
+            {isNaN(recipeId?.id) && (
+              <Link to={`/update/${id}`}>
+                <button className={style.update}>UPDATE</button>
+              </Link>
+            )}
+          </span>
+        )}
 
         <h1>{recipeId?.title}</h1>
         <img src={recipeId?.image} alt={recipeId?.title} />
@@ -69,7 +72,7 @@ const Detail = () => {
         )}
       </div>
 
-      <div className={style.block2}>
+      <div className={`${style.block2} ${block}`}>
         {recipeId && (
           <>
             <h3>Summary: </h3>

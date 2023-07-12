@@ -1,34 +1,11 @@
 .detailContainer {
   display: flex;
-  flex-direction: row;
-  position: absolute;
   width: 100%;
   background-color: var(--color1);
 }
 
 .detailContainer h1 {
-  margin: 0;
-  color: var(--color4);
-  margin-bottom: 0.9rem;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.625);
-}
-
-.detailContainer h2 {
-  margin: 0.5rem;
-  color: var(--color5);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.625);
-}
-
-.detailContainer h3 {
-  margin: 0.5rem;
-  color: var(--color5);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.625);
-}
-
-.detailContainer p {
-  margin: 0.5rem;
-  color: var(--color);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.625);
+  margin-bottom: 0.5rem;
 }
 
 .detailContainer .block1 {
@@ -43,20 +20,19 @@
 }
 
 .block1 span button {
-  margin-right: 10px;
+  margin-right: 0.8rem;
   margin-bottom: 0.8rem;
-  opacity: 0.8;
   font-size: 1.1rem;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.878);
 }
 .block1 span .close {
-  color: #01ba20;
+  color: var(--close-color);
 }
 .block1 span .delete {
-  color: #ab0303;
+  color: var(--delete-color);
 }
 .block1 span .update {
-  color: #dc7200;
+  color: var(--update-color);
 }
 
 .detailContainer .block2 {

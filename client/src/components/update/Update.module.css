@@ -1,60 +1,56 @@
-.color1 { color: #cea040 }
-.color2 { color: #dec68f }
-.color3 { color: #573d21 }
-.color4 { color: #609e98 }
-.color5 { color: #accbd3 }
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
+.updateContainer {
   display: flex;
-  justify-content: center;
-  text-align: center;
-  background-color: #dec68f6a;
-  border-radius: 30px;
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.429);
+	flex-direction: row;
+	position: absolute;
+	width: 100%;
+  background-color: var(--color1);
 }
 
-.title {
-  font-family: monospace;
-  font-size: 25px;
+.formContainer {
   display: flex;
-  color: #573d21;
-  font-weight: bold;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  padding-top: 1rem;
+  width: 50%;
+}
+
+.formContainer .cancel {
+  color: var(--cancel-color);
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.878);
+}
+
+form {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-shadow: 7px 3px 3px whitesmoke;
+  flex-direction: column;
+  width: 100%;
 }
 
-.input {
-  font-family: monospace;
-  color: #573d21;
-  font-size: 15px;
-  border-radius: 8px;
-  border: 2px solid #cea040;
-  box-shadow: 10px 5px 5px black;
+form .line {
+  display: flex;
+}
+form .line input{
+  height: 1rem;
+  flex-grow: 1;
+}
+form input {
+  margin-left: 0.3rem;
+  font-size: 1rem;
+  color: var(--color);
 }
 
-.textBox {
-  font-family: monospace;
-  color: #573d21;
-  font-size: 15px;
-  border-radius: 8px;
-  border: 2px solid #cea040;
-  box-shadow: 10px 5px 5px black;
+form textarea {
+  width: 100%;
+  resize: vertical;
+  overflow: hidden;
+  height: auto;
+  min-height: 50px; 
 }
 
-.healthBox {
-  font-family: monospace;
-  color: #573d21;
-  font-size: 15px;
-  border-radius: 8px;
-  border: 2px solid #cea040;
-  box-shadow: 10px 5px 5px black;
-}
-
-.errores {
+form .errores {
   margin-top: 10px;
   display: block;
   color: red;
@@ -64,30 +60,52 @@
   text-align: center;
 }
 
-.button {
-  border-radius: 10px;
-  color: white;
-  border: 2px solid #cea040;
-  font-weight: bold;
-  font-family: monospace;
-  font-size: 30px;
-  height: max-content;
-  width: max-content;
-  padding: 10px;
-  background-color: #573d21;
-  margin-bottom: 30px;
-  cursor: pointer;
-  box-shadow: 10px 5px 5px black;
-  text-shadow: 7px 3px 3px black;
+form .allDiets {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+}
+form .allDiets input[type="checkbox"] {
+  width: 1rem;
+  margin: 0;
+  padding: 0;
+  margin-right: 0.5rem;
+}
+form .allDiets label {
+  display: inline-flex;
+  align-items: center;
 }
 
-.diets {
-  font-family: monospace;
-  color: #573d21;
-  font-size: 18px;
+.detailContainer{
+  width: 30%;
+  padding: 4rem;
+  padding-top: 2rem;
+  border-width: 5px;
+  border-radius: 1rem;
+  border-color: var(--color2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.updateDetail {
+  flex-direction: column;
+}
+.updateDetail .block {
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
-.allDiets {
-  text-align: left;
-  padding-left: 45px;
+@media (max-width: 900px) { 
+  .updateContainer {
+    flex-direction: column;
+  }
+  .formContainer {
+    width: 90%;
+    padding: 1rem;
+  }
+  .detailContainer{
+    width: 95%;
+    padding: 1rem;
+  }
 }

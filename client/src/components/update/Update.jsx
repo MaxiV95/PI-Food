@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams, Link } from "react-router-dom";
 import {
   getAllDiets,
   getRecipeById,
   setRecipeId,
   updateRecipeById,
 } from "../../redux/actionsRecipes";
-import { useParams } from "react-router-dom";
 import validate from "./validate";
 import style from "./Update.module.css";
+import Detail from "../detail/Detail";
 
 const recipeUpdate = () => {
   const dispatch = useDispatch();
@@ -123,97 +124,122 @@ const recipeUpdate = () => {
   };
 
   return (
-    <form className={style.updateContainer} onSubmit={handlerSubmit}>
-      <div>
-        <label htmlFor="title">Title:</label>
-        <input
-          type="text"
-          value={recipeUpdate.title}
-          name="title"
-          onChange={handleChange}
-        />
-        {errors.title && <span className={style.errores}>{errors.title}</span>}
-      </div>
-
-      <div>
-        <label htmlFor="image">Image URL: </label>
-        <input
-          type="url"
-          value={recipeUpdate.image}
-          name="image"
-          onChange={handleChange}
-        />
-        {errors.image && <span className={style.errores}>{errors.image}</span>}
-      </div>
-
-      <div>
-        <label htmlFor="healthScore">HealthScore: </label>
-        <input
-          min="0"
-          max="100"
-          type="number"
-          value={recipeUpdate.healthScore}
-          name="healthScore"
-          onChange={handleChange}
-        />
-        {errors.healthScore && (
-          <span className={style.errores}>{errors.healthScore}</span>
+    <div className={style.updateContainer}>
+      <div className={style.formContainer}>
+        {id && (
+          <Link to={`/detail/${id}`}>
+            <button className={style.cancel}>CANCEL</button>
+          </Link>
         )}
+
+        <form onSubmit={handlerSubmit}>
+          <h2 className={style.line}>
+            <label htmlFor="title">Title: </label>
+            <input
+              type="text"
+              value={recipeUpdate.title}
+              name="title"
+              onChange={handleChange}
+            />
+            {errors.title && (
+              <span className={style.errores}>{errors.title}</span>
+            )}
+          </h2>
+
+          <h3 className={style.line}>
+            <label htmlFor="image">Image URL: </label>
+            <input
+              type="url"
+              value={recipeUpdate.image}
+              name="image"
+              onChange={handleChange}
+            />
+            {errors.image && (
+              <span className={style.errores}>{errors.image}</span>
+            )}
+          </h3>
+
+          <h3 className={style.line}>
+            <label htmlFor="healthScore">HealthScore: </label>
+            <input
+              min="0"
+              max="100"
+              type="number"
+              value={recipeUpdate.healthScore}
+              name="healthScore"
+              onChange={handleChange}
+            />
+            {errors.healthScore && (
+              <span className={style.errores}>{errors.healthScore}</span>
+            )}
+          </h3>
+
+          <div>
+            <h3>Select Diets: </h3>
+            <div className={style.allDiets}>
+              {diets.map((diet) => {
+                return (
+                  <React.Fragment key={diet.id}>
+                    <span>
+                      <input
+                        type="checkbox"
+                        value={diet.id}
+                        name="diets"
+                        checked={recipeUpdate?.diets[diet.id] || false}
+                        onChange={checkHandle}
+                      />
+                      <label htmlFor="diets">{diet.name}</label>
+                    </span>
+                  </React.Fragment>
+                );
+              })}
+            </div>
+            {errors.diets && (
+              <span className={style.errores}>{errors.diets}</span>
+            )}
+          </div>
+
+          <h3>
+            <label htmlFor="summary">Summary: </label>
+            <br />
+            <textarea
+              cols="30"
+              rows="10"
+              value={recipeUpdate.summary}
+              name="summary"
+              onChange={handleChange}
+            />
+            {errors.summary && (
+              <span className={style.errores}>{errors.summary}</span>
+            )}
+          </h3>
+
+          <h3>
+            <label htmlFor="steps">Steps: </label>
+            <br />
+            <textarea
+              cols="30"
+              rows="10"
+              value={recipeUpdate.steps}
+              name="steps"
+              onChange={handleChange}
+            />
+            {errors.steps && (
+              <span className={style.errores}>{errors.steps}</span>
+            )}
+          </h3>
+        </form>
+
+        <button type="submit" disabled={Object.keys(errors).length}>
+          SUBMIT
+        </button>
       </div>
 
-      <div>
-        <label htmlFor="summary">Summary: </label>
-        <br />
-        <textarea
-          cols="30"
-          rows="10"
-          value={recipeUpdate.summary}
-          name="summary"
-          onChange={handleChange}
-        />
-        {errors.summary && (
-          <span className={style.errores}>{errors.summary}</span>
-        )}
+      <div className={style.detailContainer}>
+        <h1>PREVIEW</h1>
+        <Detail updateDetail={style.updateDetail} block={style.block} />
       </div>
-
-      <div>
-        <label htmlFor="steps">Steps: </label>
-        <br />
-        <textarea
-          cols="30"
-          rows="10"
-          value={recipeUpdate.steps}
-          name="steps"
-          onChange={handleChange}
-        />
-        {errors.steps && <span className={style.errores}>{errors.steps}</span>}
-      </div>
-
-      <div>
-        <label htmlFor="diets">Select Diets</label>
-        <div>
-          {diets.map((diet) => {
-            return (
-              <React.Fragment key={diet.id}>
-                <input
-                  type="checkbox"
-                  value={diet.id}
-                  name="diets"
-                  checked={recipeUpdate?.diets[diet.id] || false}
-                  onChange={checkHandle}
-                />
-                <label htmlFor="diets">{diet.name}</label>
-              </React.Fragment>
-            );
-          })}
-        </div>
-        {errors.diets && <span className={style.errores}>{errors.diets}</span>}
-      </div>
-
-      <button type="submit" disabled={Object.keys(errors).length}>
-        SUBMIT
-      </button>
-    </form>
+    </div>
   );
 };
 
