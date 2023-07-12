@@ -1,42 +1,42 @@
 [
   {
-    "id": "199c5184-d313-4af9-b155-24fc1f054d51",
-    "name": "gluten free"
+    "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+    "name": "Dairy free"
   },
   {
-    "id": "bf88d243-a8bd-4f97-9a5d-af9490988e37",
-    "name": "lacto ovo vegetarian"
+    "id": "4a43201c-ff16-4620-b19c-929bcd897ebf",
+    "name": "Fodmap friendly"
   },
   {
-    "id": "c7367587-662a-408b-8681-2dd9f0db4d7c",
-    "name": "paleolithic"
+    "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+    "name": "Gluten free"
   },
   {
-    "id": "fe7591bb-6a9b-4466-be6a-6cbedcd00ada",
-    "name": "vegan"
+    "id": "bd0d9dd7-e7ed-478e-87a5-9ab3289e8d77",
+    "name": "Ketogenic"
   },
   {
-    "id": "8e6e081d-5e19-465a-833d-7ad806d7aa86",
-    "name": "dairy free"
+    "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+    "name": "Lacto ovo vegetarian"
   },
   {
-    "id": "ebfdbb6d-e29b-478b-881f-42d5e766ede4",
-    "name": "pescatarian"
+    "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+    "name": "Paleolithic"
   },
   {
-    "id": "9c280a35-c43d-4e65-a086-d3139bef08b4",
-    "name": "primal"
+    "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+    "name": "Pescatarian"
   },
   {
-    "id": "2a59fe73-efa1-448a-878b-8ed6c23e6743",
-    "name": "whole 30"
+    "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+    "name": "Primal"
   },
   {
-    "id": "90ef6a62-0b8b-4a6b-86b8-513c4f7dea63",
-    "name": "ketogenic"
+    "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+    "name": "Vegan"
   },
   {
-    "id": "963baf5e-06ff-4b7f-99b8-a4c9556b34b4",
-    "name": "fodmap friendly"
+    "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+    "name": "Whole 30"
   }
 ]

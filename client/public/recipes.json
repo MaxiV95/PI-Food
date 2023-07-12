@@ -20,10 +20,22 @@
       "Serve at room temperature or chilled."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -47,10 +59,22 @@
       "Add chopped scallion tops and toss.I like to toast some sesame seeds in a dry pan; I sprinkle these and some more raw, chopped scallion over the top of the rice for added flavor and crunch.Season to taste with salt and, if you'd like, more soy sauce. Keep in mind that if you're serving this with something salty and saucy (ie. teriyaki chicken) you may want to hold off on adding too much salt to the fried rice."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -67,7 +91,10 @@
       "Add in the berries, banana, and soy milk and blend. Top your glass with a few graham cracker crumbs and serve."
     ],
     "diets": [
-      "lacto ovo vegetarian"
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      }
     ]
   },
   {
@@ -87,8 +114,14 @@
       "Serve the soup immediately garnished with fresh parsley and any additional toppings. Enjoy!"
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -107,12 +140,30 @@
       "Add peas (the heat of the soup will quickly thaw them) and puree until smooth; add more until it reaches the thickness you like.Top with chives and a small dollop of creme fraiche or sour cream or greek yogurt."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "lacto ovo vegetarian",
-      "primal",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -131,13 +182,34 @@
       "Serve hot."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "lacto ovo vegetarian",
-      "primal",
-      "whole 30",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -155,8 +227,14 @@
       "Add in your stew meat, potatoes, onions, carrots, celery, and green onions. Stir well until covered and cook on low for 8 hours. You can add salt and pepper as desired, but the flavors and the Dale's marry together so well that you probably won’t need them."
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -177,10 +255,22 @@
       "Add water as necessary if the stew becomes too dry.Season with sriracha, salt and pepper, and taste for seasoning  add more liquid smoke, sriracha, salt, pepper or herbs as desired."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -201,7 +291,10 @@
       "Top with avocado and serve with shredded lettuce and salsa for a complete meal.This is SO GOOD! I love bell peppers, and I love all of these flavors that are married together that make this chicken fajita stuffed bell pepper so amazing. I could seriously just eat the flavored quinoa all by itself.If you are looking for even more delicious and healthy recipes, make sure you head over to the Simple Fit Forty tab under the cooking section of this blog. We have all of our favorite healthy recipes listed for you right there in one spot. You can also drool over out latest on the Simple Fit Forty Instagram page.If you are looking to get healthy and fit, come and join the super secret and awesome Simple Fit Forty Lifestyle community over on Facebook. We would love to have you join!"
     ],
     "diets": [
-      "gluten free"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -222,10 +315,22 @@
       "Sprinkle with za'atar and paprika, and serve with chopped fresh vegetables or toasted pita triangles.Refrigerate leftover hummus for a few days or freeze for up to a month."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -244,10 +349,22 @@
       "Serve with salsa, cheese, and sour cream."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -266,10 +383,22 @@
       "Drizzle with the olive oil, sprinkle with rosemary, and serve."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -291,11 +420,26 @@
       "Serve warm or cold as a side dish."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "lacto ovo vegetarian",
-      "primal"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      }
     ]
   },
   {
@@ -331,10 +475,22 @@
       "Pour the dressing over the salad and toss well to coat evenly. Taste for seasoning and serve."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -356,9 +512,18 @@
       "Serve with Rice, Pasta, Plantain, Yams or Potatoes."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "whole 30"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -377,8 +542,14 @@
       "Let the pork rest in the refrigerator for several hours or over night. Slice with a serrated knife or a very sharp chef knife."
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -395,8 +566,14 @@
       "Serve immediately."
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -416,10 +593,22 @@
       "Add walnuts and serve hot."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -437,9 +626,18 @@
       "Cut and serve at room temperature with dipping sauce.The Culinary Chases Note: The rice wrapper can be fussy to handle if you let it soak too long. I usually give it a couple of swishes in the water and then remove. It may feel slightly stiff but by the time you are ready to roll up, the wrapper will become very pliable.  A typical spring roll contains cooked rice vermicelli, slivers of cooked pork and julienned carrots but you can use whatever suits your fancy.  Enjoy!"
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "pescatarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      }
     ]
   },
   {
@@ -460,8 +658,14 @@
       "Add asparagus, and cook, covered, for an additional 10 minutes.Season with 1 tablespoon sherry vinegar, salt and pepper."
     ],
     "diets": [
-      "dairy free",
-      "lacto ovo vegetarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      }
     ]
   },
   {
@@ -484,7 +688,10 @@
       "Let it cool for a few minutes"
     ],
     "diets": [
-      "gluten free"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -513,10 +720,22 @@
       "Add the beans, kale, and lemon juice and simmer for 10 minutes, until the kale is tender. Taste and adjust the seasoning, then serve, garnished with a generous drizzle of extra-virgin olive oil."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -534,12 +753,30 @@
       "Toss in some basalmic vinaigrette"
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "lacto ovo vegetarian",
-      "primal",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -559,10 +796,22 @@
       "Before serving sprinkle with chopped parsley."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -588,12 +837,30 @@
       "These wraps are best consumed when they are freshly made. Refrigerate any leftovers in an airtight container."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "lacto ovo vegetarian",
-      "primal",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -613,10 +880,22 @@
       "Mix in cumin and vinegar and blend well."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -635,7 +914,10 @@
       "Serve immediately."
     ],
     "diets": [
-      "gluten free"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -653,11 +935,26 @@
       "Add lime juice and vinegar, adjust to perfect, and serve."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "primal",
-      "pescatarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      }
     ]
   },
   {
@@ -670,10 +967,22 @@
     "summary": "Finger Foods: Frittata Muffins might be a good recipe to expand your breakfast repertoire. This recipe makes 1 servings with 655 calories, 50g of protein, and 45g of fat each. For $2.96 per serving, this recipe covers 47% of your daily requirements of vitamins and minerals. From preparation to the plate, this recipe takes approximately 45 minutes. Plenty of people made this recipe, and 601 would say it hit the spot. If you have salt and pepper, orange pepper, t cream, and a few other ingredients on hand, you can make it. It is a good option if you're following a gluten free, lacto ovo vegetarian, primal, and ketogenic diet. It is brought to you by fullbellysisters.blogspot.com. Overall, this recipe earns an amazing spoonacular score of 97%. Users who liked this recipe also liked Finger Foods: Frittata Muffins, {38 Power Foods} Skinny Kiwifruit Muffins, and {38 Power Foods} Skinny Broccoli Cheese Muffins.",
     "healthScore": 49,
     "diets": [
-      "gluten free",
-      "lacto ovo vegetarian",
-      "primal",
-      "ketogenic"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "bd0d9dd7-e7ed-478e-87a5-9ab3289e8d77",
+        "name": "Ketogenic"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      }
     ]
   },
   {
@@ -701,10 +1010,22 @@
       "Remove from heat, cover, and let sit for a few minutes before serving."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -725,10 +1046,22 @@
       "Sprinkle each serving with a scattering of toasted cashews and seeds."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -748,9 +1081,18 @@
       "Add cilantro and lemon juice to stew and serve over warm couscous."
     ],
     "diets": [
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -768,9 +1110,18 @@
       "Serve warm."
     ],
     "diets": [
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -790,8 +1141,14 @@
       "Drizzle your dressing over and serve cool.   "
     ],
     "diets": [
-      "gluten free",
-      "pescatarian"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      }
     ]
   },
   {
@@ -810,8 +1167,14 @@
       "Serve immediately."
     ],
     "diets": [
-      "gluten free",
-      "lacto ovo vegetarian"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      }
     ]
   },
   {
@@ -824,10 +1187,22 @@
     "summary": "Almond Joy Protein Shake might be a good recipe to expand your beverage recipe box. One portion of this dish contains roughly 24g of protein, 41g of fat, and a total of 485 calories. This gluten free, dairy free, fodmap friendly, and ketogenic recipe serves 1 and costs $2.24 per serving. 22 people found this recipe to be flavorful and satisfying. From preparation to the plate, this recipe takes approximately 45 minutes. It is brought to you by fullbellysisters.blogspot.com. Head to the store and pick up coconut, chocolate almond milk, coconut milk, and a few other things to make it today. All things considered, we decided this recipe deserves a spoonacular score of 97%. This score is super. If you like this recipe, take a look at these similar recipes: Almond Joy Breakfast Shake – Chocolate Coconut Protein Shake, Almond Joy Protein Shake, and Almond Joy Protein Shake.",
     "healthScore": 78,
     "diets": [
-      "gluten free",
-      "dairy free",
-      "fodmap friendly",
-      "ketogenic"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "4a43201c-ff16-4620-b19c-929bcd897ebf",
+        "name": "Fodmap friendly"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "bd0d9dd7-e7ed-478e-87a5-9ab3289e8d77",
+        "name": "Ketogenic"
+      }
     ]
   },
   {
@@ -847,10 +1222,22 @@
       "Serve cold or at room temperature."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -882,9 +1269,18 @@
       "Serve hot or at room temperature (the latter is my favorite). Eat with a nice crusty loaf of Portuguese bread. Enjoy!"
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "whole 30"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -900,7 +1296,10 @@
       "In a small bowl, combine flour, broth, sugar, and soy sauce. Stir until sugar and flour are dissolved.In a large skillet or wok over high heat, cook and stir beef 2 to 4 minutes, or until browned. Stir in broth mixture, ginger, garlic, and broccoli. Bring to a boil, then reduce heat. Simmer 5 to 10 minutes, or until sauce thickens.Excellent served over rice."
     ],
     "diets": [
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      }
     ]
   },
   {
@@ -920,9 +1319,18 @@
       "Let the salad marinate for an hour or so before serving."
     ],
     "diets": [
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -943,7 +1351,10 @@
       "Once you have reached a boil, cover with a lid, lower heat enough to keep it simmering.  Continue to simmer for 1.5 to 2 hours, stirring occasionally."
     ],
     "diets": [
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      }
     ]
   },
   {
@@ -960,8 +1371,14 @@
       "Add your seasoning cube.Finally stir in your cubed mango and serve warm with any protein of your choice. I’d say chicken but it’s up to you."
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -974,13 +1391,34 @@
     "summary": "If you want to add more gluten free, dairy free, paleolithic, and lacto ovo vegetarian recipes to your recipe box, Homemade Guacamole might be a recipe you should try. For 92 cents per serving, this recipe covers 9% of your daily requirements of vitamins and minerals. This recipe makes 4 servings with 170 calories, 2g of protein, and 15g of fat each. It is an inexpensive recipe for fans of Mexican food. Many people really liked this hor d'oeuvre. This recipe from Pink When has 1330 fans. A mixture of roma tomato, onion, pepper, and a handful of other ingredients are all it takes to make this recipe so tasty. From preparation to the plate, this recipe takes roughly 45 minutes. With a spoonacular score of 97%, this dish is amazing. Similar recipes are Homemade Guacamole, Homemade Guacamole, and Homemade Guacamole.",
     "healthScore": 34,
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "lacto ovo vegetarian",
-      "primal",
-      "whole 30",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -1000,8 +1438,14 @@
       "Fast, easy, and healthy-- one of my favorite lunches!"
     ],
     "diets": [
-      "gluten free",
-      "lacto ovo vegetarian"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      }
     ]
   },
   {
@@ -1020,13 +1464,34 @@
       "Remove and place in a bowl, toss with lemon juice."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "lacto ovo vegetarian",
-      "primal",
-      "whole 30",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -1044,10 +1509,22 @@
       "Drain.In a food processor, combine all of the ingredients and process until you have a thick, smooth paste. You may need to add extra olive oil or a bit of water if you want a thinner paste. Makes 3 cups, nutrition information is based on 1/4 cup serving."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -1065,7 +1542,10 @@
       "Serve hot!     "
     ],
     "diets": [
-      "gluten free"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -1086,9 +1566,18 @@
       "Pour the veggies onto a large platter and drizzle with the cilantro cream. Top with micro greens and sliced almonds. Enjoy immediately or place in the refrigerator to chill."
     ],
     "diets": [
-      "gluten free",
-      "lacto ovo vegetarian",
-      "primal"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      }
     ]
   },
   {
@@ -1108,7 +1597,10 @@
       "Pour out all the ingredients into a dish and enjoy with your favorite dishes!"
     ],
     "diets": [
-      "gluten free"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -1127,8 +1619,14 @@
       "Bake uncovered for about 12 – 15 minutes or until the fish flakes easily with a fork. Squeeze the lemon wedges over the cooked fish, garnish with the fresh basil and/or oregano and serve with hot cooked rice."
     ],
     "diets": [
-      "gluten free",
-      "pescatarian"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      }
     ]
   },
   {
@@ -1144,8 +1642,14 @@
       "Place everything on a plate!  :)"
     ],
     "diets": [
-      "gluten free",
-      "primal"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      }
     ]
   },
   {
@@ -1158,9 +1662,18 @@
     "summary": "Chocolate Peanut Butter Cinnamon Smoothie is a gluten free, dairy free, and fodmap friendly breakfast. This recipe serves 1 and costs $1.5 per serving. One portion of this dish contains roughly 27g of protein, 21g of fat, and a total of 420 calories. If you have ice cubes, banana, jif cinnamon peanut butter, and a few other ingredients on hand, you can make it. From preparation to the plate, this recipe takes approximately 45 minutes. Only a few people really liked this Southern dish. 5 people found this recipe to be tasty and satisfying. It is brought to you by fullbellysisters.blogspot.com. With a spoonacular score of 96%, this dish is super. Cinnamon Apple Peanut Butter Smoothie, Peanut Butter Chocolate Chip Protein Smoothie with Kura Smoothie Starter, and Chocolate-Peanut butter Smoothie are very similar to this recipe.",
     "healthScore": 100,
     "diets": [
-      "gluten free",
-      "dairy free",
-      "fodmap friendly"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "4a43201c-ff16-4620-b19c-929bcd897ebf",
+        "name": "Fodmap friendly"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -1176,8 +1689,14 @@
       "Brown the lean ground beef in a deep skillet. Cook over medium heat until cooked all the way through, and then drain.In a large pan over high heat add in all of your additional ingredients: cooked ground beef, tomato juice, kidney beans, pinto beans, water, tomato paste, chili powder, cumin, black pepper, oregano, sugar, cayenne pepper, bell pepper, and chopped onions.Bring to a boil.Once your large pot of chili has started to boil, lower the heat and simmer for 2 hours uncovered."
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -1200,10 +1719,22 @@
       "Serve with some green salad."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "whole 30",
-      "pescatarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -1224,9 +1755,18 @@
       "Serve with mashed potatoes and sauce."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "whole 30"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -1243,9 +1783,18 @@
       "Serve as a dip for raw vegetables. Makes approximately 3 cups."
     ],
     "diets": [
-      "gluten free",
-      "lacto ovo vegetarian",
-      "primal"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      }
     ]
   },
   {
@@ -1273,9 +1822,18 @@
       "Place cover back over the asparagus. Continue cooking an additional 3 to 5 minutes until asparagus is cooked but not too soft.  Grate lemon zest over the top of the asparagus."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "pescatarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      }
     ]
   },
   {
@@ -1297,10 +1855,22 @@
       "Drizzle a spoonful of honey over the plate, then sprinkle the endive with about 1/4th of the crumbled prosciutto."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "primal"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      }
     ]
   },
   {
@@ -1332,10 +1902,22 @@
       "Mix in the cubed tofu, gently re-heat and serve."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -1382,10 +1964,22 @@
       "Serve warm"
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -1403,14 +1997,38 @@
       "Add the fresh coriander and sunflower seeds on top.Leave aside for a couple of hours for the spices to seep into the veggies for added flavor."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "lacto ovo vegetarian",
-      "primal",
-      "fodmap friendly",
-      "whole 30",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "4a43201c-ff16-4620-b19c-929bcd897ebf",
+        "name": "Fodmap friendly"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -1430,10 +2048,22 @@
       "Add fruits and vegetables over a scoop of cooked quinoa and make an amazing quinoa grain bowl."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -1452,10 +2082,22 @@
       "Place some of the kale mixture in the bottom of a bowl and top with sliced avocado, some of the roasted cauliflower, a drizzle of the tahini sauce and if desired, sprinkle some cress on the top."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -1479,9 +2121,18 @@
       "Serve with a dollop of sour cream."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      }
     ]
   },
   {
@@ -1503,7 +2154,10 @@
       "Serve immediately."
     ],
     "diets": [
-      "gluten free"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -1523,9 +2177,18 @@
       "Garnish and serve."
     ],
     "diets": [
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -1549,8 +2212,14 @@
       "Sprinkle with chopped cilantro."
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -1569,7 +2238,10 @@
       "Serve the mash potato topped with the chicken and remaining sauce with a side of broccoli."
     ],
     "diets": [
-      "gluten free"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -1588,9 +2260,18 @@
       "Serve on its own as an appetizer or with rice."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "whole 30"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -1607,8 +2288,14 @@
       "Serve immediately."
     ],
     "diets": [
-      "dairy free",
-      "pescatarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      }
     ]
   },
   {
@@ -1629,11 +2316,26 @@
       "Cook the vegetables in the oven for about 30 minutes. They should be tender but still have a slight bite to them."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "whole 30",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -1646,9 +2348,18 @@
     "summary": "Chilled Cucumber Avocado Soup with Yogurt and Kefir is a gluten free, lacto ovo vegetarian, and primal hor d'oeuvre. This recipe serves 3 and costs $2.1 per serving. One portion of this dish contains approximately 9g of protein, 7g of fat, and a total of 189 calories. 171 person were impressed by this recipe. A mixture of avocado, kefir, onion, and a handful of other ingredients are all it takes to make this recipe so yummy. Autumn will be even more special with this recipe. From preparation to the plate, this recipe takes around 45 minutes. It is brought to you by fullbellysisters.blogspot.com. Overall, this recipe earns an outstanding spoonacular score of 97%. Chilled Cucumber, Avocado, and Yogurt Soup, Chilled Cucumber-Yogurt Soup, and Chilled Cucumber Mint Yogurt Soup are very similar to this recipe.",
     "healthScore": 40,
     "diets": [
-      "gluten free",
-      "lacto ovo vegetarian",
-      "primal"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      }
     ]
   },
   {
@@ -1676,7 +2387,10 @@
       "Serve with the charred peppers, cacik, salsa vinaigrette and some chilli sauce."
     ],
     "diets": [
-      "gluten free"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -1698,10 +2412,22 @@
       "Add nutmeg, sea salt and pepper to taste"
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -1723,7 +2449,10 @@
       "Chocolate GlazeI used a chocolate sauce and drizzled over the doughnuts with sprinkles to top it."
     ],
     "diets": [
-      "lacto ovo vegetarian"
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      }
     ]
   },
   {
@@ -1743,10 +2472,22 @@
       "This salad is left to eat alone or to accompany meat and poultry dishes, enjoy ..."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -1765,10 +2506,22 @@
       "Add the salt, sugar, lemon juice and cinnamon powder and cook for a further two minutes.Throw in the chopped coriander, combine and serve."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -1784,13 +2537,34 @@
       "Go to my blog for the full instructions: http://gourmandelle.com/basil-tagliatelle-with-roasted-red-bell-pepper-salad/"
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "lacto ovo vegetarian",
-      "primal",
-      "whole 30",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -1807,9 +2581,18 @@
       "Garnish with crushed peanuts and serve."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "fodmap friendly"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "4a43201c-ff16-4620-b19c-929bcd897ebf",
+        "name": "Fodmap friendly"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -1833,10 +2616,22 @@
       "Scallions or parsley on top, if desired."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -1862,8 +2657,14 @@
       "Bake in a preheated 375F for 25- 35 minutes, depending on the thickness of the salmon fillet."
     ],
     "diets": [
-      "dairy free",
-      "pescatarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      }
     ]
   },
   {
@@ -1876,11 +2677,26 @@
     "summary": "If you have roughly 45 minutes to spend in the kitchen, Shredded Roast Beef Stuffed Sweet Potatoes (Whole 30 & PALEO) might be an awesome gluten free, dairy free, paleolithic, and primal recipe to try. One portion of this dish contains about 48g of protein, 5g of fat, and a total of 417 calories. For $9.3 per serving, this recipe covers 39% of your daily requirements of vitamins and minerals. This recipe serves 4. It works well as a side dish. This recipe is liked by 4 foodies and cooks. If you have beef broth, sweet potatoes, salt/pepper and favorite healthy seasonings, and a few other ingredients on hand, you can make it. It is brought to you by Pink When. All things considered, we decided this recipe deserves a spoonacular score of 97%. This score is excellent. Similar recipes include Paleo s: Chicken Stuffed Sweet Potatoes, Whole30 & Paleo Stuffed Sweet Potatoes, and Harvest Paleo Vegan Stuffed Sweet Potatoes.",
     "healthScore": 76,
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "primal",
-      "whole 30"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -1893,8 +2709,14 @@
     "summary": "The recipe Filet Mignon Soft Tacos is ready in roughly 45 minutes and is definitely a tremendous gluten free and pescatarian option for lovers of Mexican food. This recipe makes 2 servings with 514 calories, 49g of protein, and 29g of fat each. For $4.21 per serving, this recipe covers 24% of your daily requirements of vitamins and minerals. It works well as a pretty expensive main course. This recipe is liked by 400 foodies and cooks. Head to the store and pick up corn tortillas, cracked pepper, guacamole, and a few other things to make it today. It is brought to you by Pink When. All things considered, we decided this recipe deserves a spoonacular score of 95%. This score is awesome. Similar recipes include The Secret to Easy Skillet Filet Mignon Steak Tacos, The Secret to Easy Skillet Filet Mignon Steak Tacos, and The Secret to Easy Skillet Filet Mignon Steak Tacos.",
     "healthScore": 37,
     "diets": [
-      "gluten free",
-      "pescatarian"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      }
     ]
   },
   {
@@ -1917,11 +2739,26 @@
       "Serve immediately."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "paleolithic",
-      "primal",
-      "pescatarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+        "name": "Paleolithic"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      },
+      {
+        "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+        "name": "Primal"
+      }
     ]
   },
   {
@@ -1945,10 +2782,22 @@
       "Cut the seaweed finely and mix carefully with the puree.With an ice cream spoon you  create beautiful balls and sprinkle with toasted sesame seeds.bon apptit"
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -2003,8 +2852,14 @@
       "Let it cool for at least half an hour."
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -2020,8 +2875,14 @@
       "Once you have all of your ingredients added, allow it to cook all day for 8 hours on low. If you are wanting to make this a little faster, turn it on high and cook for 4 hours.When your Chicken Taco Soup is ready to serve, add in some crushed tortilla shells, shredded cheddar cheese, and a little sour cream."
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -2044,7 +2905,10 @@
       "Add cheese, handfuls at a time, and stir constantly over low heat for 10 minutes until smooth and creamy. If soup becomes too thick, add additional chicken stock. Do not let soup boil."
     ],
     "diets": [
-      "lacto ovo vegetarian"
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      }
     ]
   },
   {
@@ -2065,8 +2929,14 @@
       "Serve with basmati rice."
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -2086,11 +2956,26 @@
       "Let roast another 30-40 minutes, turning every so often to get an even roast."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "whole 30",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      },
+      {
+        "id": "55cd3aa3-07da-44c2-af6d-fa37aad8aa4e",
+        "name": "Whole 30"
+      }
     ]
   },
   {
@@ -2114,7 +2999,10 @@
       "Bake 40 minutes. Turn out of pan immediately and cool on a rack before slicing"
     ],
     "diets": [
-      "lacto ovo vegetarian"
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      }
     ]
   },
   {
@@ -2135,8 +3023,14 @@
       "Serve the soup into bowls and then top with your favorite toppings such as sour cream, cheese, avocado, etc."
     ],
     "diets": [
-      "gluten free",
-      "dairy free"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      }
     ]
   },
   {
@@ -2160,10 +3054,22 @@
       "Serve with crusty bread and a soft cheese like St. Andre or Cambazola"
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian",
-      "vegan"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      },
+      {
+        "id": "f3bcf964-1d6e-4892-a472-9d87018c27c1",
+        "name": "Vegan"
+      }
     ]
   },
   {
@@ -2184,9 +3090,18 @@
       "Place your shrimp on top of the salad with the rest of the avocado and sprinkle/pour any residue from the pan over your salad in which you cooked the shrimp. This is great flavour, so you dont want to lose it."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "pescatarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+        "name": "Pescatarian"
+      }
     ]
   },
   {
@@ -2210,9 +3125,18 @@
       "Drizzle with more sauce and there you go."
     ],
     "diets": [
-      "gluten free",
-      "dairy free",
-      "lacto ovo vegetarian"
+      {
+        "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+        "name": "Dairy free"
+      },
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      }
     ]
   },
   {
@@ -2235,8 +3159,14 @@
       "Serve immediately, garnished with toasted nuts, if desired."
     ],
     "diets": [
-      "gluten free",
-      "lacto ovo vegetarian"
+      {
+        "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+        "name": "Gluten free"
+      },
+      {
+        "id": "b4a4084f-ae68-484d-83dd-f2328e66991b",
+        "name": "Lacto ovo vegetarian"
+      }
     ]
   }
 ]

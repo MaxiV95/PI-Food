@@ -1,31 +1,37 @@
 {
-  "id": "ASD664090",
-  "title": "Turkish Chicken Salad with Home-made Cacik Yogurt Sauce",
-  "image": "https://spoonacular.com/recipeImages/664090-556x370.jpg",
+  "id": "ASD648320",
+  "title": "Jade Buddha Salmon Tartare",
+  "image": "https://spoonacular.com/recipeImages/648320-556x370.jpg",
   "vegetarian": false,
   "vegan": false,
   "glutenFree": true,
-  "summary": "You can never have too many main course recipes, so give Turkish Chicken Salad with Home-made Cacik Yogurt Sauce a try. This recipe serves 4 and costs $4.48 per serving. Watching your figure? This gluten free recipe has 643 calories, 67g of protein, and 30g of fat per serving. 9 people found this recipe to be tasty and satisfying. Head to the store and pick up lebanese cucumber, roast chicken, garlic, and a few other things to make it today. From preparation to the plate, this recipe takes around 45 minutes. It is brought to you by Foodista. All things considered, we decided this recipe deserves a spoonacular score of 95%. This score is outstanding. Similar recipes include Spicy Lamb Kabobs With Turkish Cacik, Jerk Rubbed Chicken Thighs with Home-Made Mango-Habanero Hot Sauce, and Yogurt and Cucumber Dip Cacik.",
-  "healthScore": 82,
+  "summary": "Need a gluten free, dairy free, paleolithic, and primal main course? Jade Buddha Salmon Tartare could be an outstanding recipe to try. This recipe serves 2 and costs $6.96 per serving. One serving contains 382 calories, 34g of protein, and 25g of fat. If you have olive oil to coat, green onion, salt and pepper, and a few other ingredients on hand, you can make it. 28 people were glad they tried this recipe. It is brought to you by Foodista. From preparation to the plate, this recipe takes roughly 45 minutes. Overall, this recipe earns an awesome spoonacular score of 97%. If you like this recipe, you might also like recipes such as Salmon Tartare, Salmon Tartare, and Salmon Tartare.",
+  "healthScore": 89,
   "steps": [
-    "First prepare the Cacik: For the Cacik: Chop the cucumber into tiny pieces, as small as you can, and place in a bowl. Cover the cucumber with salt and set aside for 30 minutes. The cucumbers will start to exude their juices which will flavour the yogurt nicely.",
-    "Put a griddle pan on medium  high heat, cover the peppers with olive oil and start to char.",
-    "Cut the tomato and cucumber into medium pieces. Slice the red onion as thin as you can. Chop the parsley fine.",
-    "Place all ingredients in a bowl and cover with a the juice of 1 lemon. Season with salt and pepper.",
-    "Let it sit in the fridge for 30 minutes  1 hour, stirring a couple times, so it starts to exude juice.",
-    "Tear the lettuce into mouth-siazed peices.",
-    "Cut the red cabbage into thin slices. Grate the carrot.",
-    "Mix together in a bowl.",
-    "Tear the chicken into large pieces and add to the salad.",
-    "Remove the tomato salsa from the fridge.",
-    "Drain the juice and keep for later. Now add the tomato, cucumber, parsley onion mix to the chicken salad, as well as the sliced gherkin.",
-    "Lay out the salad on a large plate or chopping board.",
-    "Serve with the charred peppers, cacik, salsa vinaigrette and some chilli sauce."
+    "Combine all ingredients except lime juice and vinegar.",
+    "Chill for 30 minutes.",
+    "Add lime juice and vinegar, adjust to perfect, and serve."
   ],
   "diets": [
-    "gluten free",
-    "dairy free",
-    "lacto ovo vegetarian",
-    "vegan"
+    {
+      "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+      "name": "Dairy free"
+    },
+    {
+      "id": "34e8b9ca-8b29-43e3-967f-2a8d436a5fdf",
+      "name": "Gluten free"
+    },
+    {
+      "id": "9621dd86-3ec5-45dd-b80e-b9d5063ed084",
+      "name": "Paleolithic"
+    },
+    {
+      "id": "8fb0f42a-efd3-4b8e-98e7-cb95590fe966",
+      "name": "Pescatarian"
+    },
+    {
+      "id": "100306bb-d298-48b1-8127-e6376b4c280b",
+      "name": "Primal"
+    }
   ]
 }

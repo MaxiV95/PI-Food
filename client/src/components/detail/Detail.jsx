@@ -19,10 +19,6 @@ const Detail = () => {
     return () => dispatch(setRecipeId(undefined));
   }, []);
 
-  const dietsUpperCase = recipeId?.diets?.map((diet) => {
-    return diet.charAt(0).toUpperCase() + diet.slice(1);
-  });
-
   const renderedSteps = recipeId?.steps?.map((step, index) => (
     <React.Fragment key={index}>
       {" -> " + step}
@@ -65,10 +61,10 @@ const Detail = () => {
           <h2>{`HealthScore: ${recipeId.healthScore}`}</h2>
         )}
 
-        {dietsUpperCase && (
+        {recipeId?.diets && (
           <>
             <h3>Diets: </h3>
-            <p>{dietsUpperCase.join(", ")}</p>
+            <p>{recipeId.diets.map((diet) => diet.name).join(", ")}</p>
           </>
         )}
       </div>

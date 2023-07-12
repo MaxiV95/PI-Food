@@ -1,43 +1,35 @@
 const { Diet } = require("../../../db");
-const searchRecipeAPI = require("../recipe/searchRecipeAPI");
-
-const getAllDietsAPI = async () => {
-  // Carga de dietas solo si la base de datos esta vacía
-  try {
-    const data = await searchRecipeAPI({});
-    console.log("API request executed.");
-
-    if (!data) {
-      throw new Error("No API results found.");
-    }
-
-    const dietArray = data.map((recipe) => recipe.diets).flat(); // Devuelve un array sin profundidad
-    const apiDiets = [...new Set(dietArray)]; // Crea un array sin repeticiones
-
-    await Promise.all(
-      apiDiets.map(async (diet) => {
-        await Diet.findOrCreate({ where: { name: diet } });
-      })
-    );
-
-    const allDiets = await Diet.findAll();
-    return allDiets;
-  } catch (error) {
-    throw error;
-  }
-};
+const callSpoonacularAPI = require("../callSpoonacularAPI");
 
 // Función principal
 const getAllDiets = async () => {
-  try {
-    let allDietsDB = await Diet.findAll();
-
-    if (!allDietsDB.length) allDietsDB = await getAllDietsAPI();
-
-    return allDietsDB;
-  } catch (error) {
-    throw error;
-  }
+	let allDietsDB = await Diet.findAll();
+	if (!allDietsDB.length) allDietsDB = await getAllDietsAPI();
+	return allDietsDB;
 };
-
 module.exports = getAllDiets;
+
+const getAllDietsAPI = async () => {
+	// Carga de dietas solo si la base de datos esta vacía
+	const data = await callSpoonacularAPI(
+		`https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=100`
+	);
+	if (!data.results) throw new Error("No API results found.");
+	console.log("API request executed.");
+
+	const dietsAPI = data.results.map((recipe) => recipe.diets).flat(9); // Array sin profundidad
+	let dietArray = [...new Set(dietsAPI)]; // Array sin repeticiones
+	dietArray.sort((a, b) => a.localeCompare(b)); // Ordenado alfabéticamente
+	dietArray = dietArray.map(
+		(diet) => diet.charAt(0).toUpperCase() + diet.slice(1)
+	); // Primera letra en mayúscula
+
+	await Promise.all(
+		dietArray.map(async (diet) => {
+			await Diet.findOrCreate({ where: { name: diet } });
+		})
+	);
+
+	const allDiets = await Diet.findAll();
+	return allDiets;
+};

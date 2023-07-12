@@ -72,17 +72,11 @@ export const getAllDiets = () => {
     if (dietsAll.length > 0) return;
 
     try {
-      //const response = await axios.get("/diets");
-      //const allDiets = response.data;
+      // const response = await axios.get("/diets");
+      // const allDiets = response.data;
       const response = await fetch("/diets.json");
       let allDiets = await response.json();
 
-      allDiets = allDiets.map((diet) => {
-        const rename = diet.name.charAt(0).toUpperCase() + diet.name.slice(1);
-        return { ...diet, name: rename };
-      });
-
-      allDiets.sort((a, b) => a.name.localeCompare(b.name));
       return dispatch(setDiets(allDiets));
     } catch (error) {
       console.error(error);
@@ -107,6 +101,24 @@ export const getAllRecipes = () => {
       return dispatch(setRecipesAll(allRecipes));
     } catch (error) {
       console.error(error);
+    }
+  };
+};
+
+// Busca receta por id
+export const getRecipeById = (id) => {
+  return async (dispatch) => {
+    if (!id) return dispatch(setRecipeId(undefined));
+
+    try {
+      // const response = await axios.get(`/recipes/${id}`);
+      // const data = response.data;
+      const response = await fetch("/recipeID.json");
+      const data = await response.json();
+      dispatch(setRecipeId(data));
+    } catch (error) {
+      console.error(error.message);
+      console.error(`There is no recipe with the ID: ${id}`);
     }
   };
 };
@@ -161,23 +173,6 @@ export const updateSelected = (option) => {
     return dispatch(
       setSelected({ selected: select, recipesShown: selectedRecipes, page: 1 })
     );
-  };
-};
-
-// Busca receta por id
-export const getRecipeById = (id) => {
-  return async (dispatch) => {
-    try {
-      if (!id) return dispatch(setRecipeId(undefined));
-      // const response = await axios.get(`/recipes/${id}`);
-      // return response.data;
-      const response = await fetch("/recipeID.json");
-      const data = await response.json();
-      dispatch(setRecipeId(data));
-    } catch (error) {
-      console.error(error.message);
-      console.error(`There is no recipe with the ID: ${id}`);
-    }
   };
 };
 
