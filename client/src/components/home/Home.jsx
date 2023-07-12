@@ -18,11 +18,9 @@ const Home = () => {
 	const recipes = recipesShown?.slice(startIndex, endIndex);
 
 	useEffect(() => {
-		if (!diets.length) {
-			dispatch(getAllRecipes());
-			dispatch(getAllDiets());
-		}
-	}, []);
+    dispatch(getAllRecipes());
+    dispatch(getAllDiets());
+  }, []);
 
 	return (
 		<div className={style.homeContainer}>

@@ -3,59 +3,64 @@ import axios from "axios";
 import TYPE from "./types";
 
 const initialState = {
-	dietsAll: [], // todas
-	recipesAll: [], // todas (primeras 100)
-	recipesShown: [], // recetas mostradas
-	recipesByName: [], // buscadas por nombre
+  dietsAll: [], // todas
+  recipesAll: [], // todas (primeras 100)
+  recipesShown: [], // mostradas
+  recipesByName: [], // buscadas por nombre
+  recipeId: undefined, // buscadas por id
 
-	selected: {
-		byDiet: "",
-		byCreated: "",
-		byOrder: "",
-	},
+  selected: {
+    byDiet: "",
+    byCreated: "",
+    byOrder: "",
+  },
 
-	page: 1,
+  page: 1,
 };
 
 export const recipeStore = createSlice({
-	name: "recipeStore",
-	initialState,
-	reducers: {
-		setDiets: (state, { payload }) => {
-			state.dietsAll = payload;
-		},
-		setRecipesAll: (state, { payload }) => {
-			state.recipesAll = payload;
-			state.recipesShown = payload;
-			state.recipesByName = [];
-			state.selected = {
-				byDiet: "",
-				byCreated: "",
-				byOrder: "",
-			};
-			state.page = 1;
-		},
-		setRecipesByName: (state, { payload }) => {
-			state.recipesShown = payload;
-			state.recipesByName = payload;
-			state.page = 1;
-		},
-		setSelected: (state, { payload }) => {
-			state.selected = { ...state.selected, ...payload.selected };
-			state.recipesShown = payload.recipesShown;
-			state.page = payload.page;
-		},
-		setPage: (state, { payload }) => {
-			state.page = payload;
-		},
-	},
+  name: "recipeStore",
+  initialState,
+  reducers: {
+    setDiets: (state, { payload }) => {
+      state.dietsAll = payload;
+    },
+    setRecipesAll: (state, { payload }) => {
+      state.recipesAll = payload;
+      state.recipesShown = payload;
+      state.recipesByName = [];
+      state.selected = {
+        byDiet: "",
+        byCreated: "",
+        byOrder: "",
+      };
+      state.page = 1;
+    },
+    setRecipesByName: (state, { payload }) => {
+      state.recipesShown = payload;
+      state.recipesByName = payload;
+      state.page = 1;
+    },
+    setRecipeId: (state, { payload }) => {
+      state.recipeId = payload;
+    },
+    setSelected: (state, { payload }) => {
+      state.selected = { ...state.selected, ...payload.selected };
+      state.recipesShown = payload.recipesShown;
+      state.page = payload.page;
+    },
+    setPage: (state, { payload }) => {
+      state.page = payload;
+    },
+  },
 });
 export const {
-	setDiets,
-	setRecipesAll,
-	setRecipesByName,
-	setSelected,
-	setPage,
+  setDiets,
+  setRecipesAll,
+  setRecipesByName,
+  setRecipeId,
+  setSelected,
+  setPage,
 } = recipeStore.actions;
 export default recipeStore.reducer;
 
@@ -153,23 +158,27 @@ export const updateSelected = (option) => {
     if (select.byOrder === TYPE.Descending)
       selectedRecipes.sort((a, b) => b.title.localeCompare(a.title));
 
-    dispatch(
+    return dispatch(
       setSelected({ selected: select, recipesShown: selectedRecipes, page: 1 })
     );
   };
 };
 
 // Busca receta por id
-export const getRecipeById = async (id) => {
-  try {
-    // const response = await axios.get(`/recipes/${id}`);
-    // return response.data;
-    const response = await fetch("/recipeID.json");
-    return await response.json();
-  } catch (error) {
-    console.error(error);
-    alert(error.message + `There is no recipe with the ID: ${id}`);
-  }
+export const getRecipeById = (id) => {
+  return async (dispatch) => {
+    try {
+      if (!id) return dispatch(setRecipeId(undefined));
+      // const response = await axios.get(`/recipes/${id}`);
+      // return response.data;
+      const response = await fetch("/recipeID.json");
+      const data = await response.json();
+      dispatch(setRecipeId(data));
+    } catch (error) {
+      console.error(error.message);
+      console.error(`There is no recipe with the ID: ${id}`);
+    }
+  };
 };
 
 // Elimina receta por id
@@ -181,4 +190,22 @@ export const deleteRecipeById = async (id) => {
     console.error(error);
     alert(error.message + `There is no recipe with the ID: ${id}`);
   }
+};
+
+// Postea una nueva receta
+export const postRecipe = async (data) => {
+  await axios
+    .post("/recipes", data)
+    .then((res) => alert("Successfully Created"))
+    .catch((err) => alert(err.response.data.error));
+  return;
+};
+
+// Actualiza receta por id
+export const updateRecipeById = async (data) => {
+  await axios
+    .put("/recipes", data)
+    .then((res) => alert("Successfully updated"))
+    .catch((err) => alert(err.response.data.error));
+  return;
 };

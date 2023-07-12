@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import {
   getAllRecipes,
+  setRecipeId,
   getRecipeById,
   deleteRecipeById,
 } from "../../redux/actionsRecipes";
@@ -11,16 +12,12 @@ import style from "./Detail.module.css";
 const Detail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-
-  const [recipeId, setRecipeId] = useState(null);
+  const recipeId = useSelector((state) => state.recipeStore.recipeId);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const recipe = await getRecipeById(id);
-      setRecipeId(recipe);
-    };
-    fetchData();
-  }, [id]);
+    dispatch(getRecipeById(id));
+    return () => dispatch(setRecipeId(undefined));
+  }, []);
 
   const dietsUpperCase = recipeId?.diets?.map((diet) => {
     return diet.charAt(0).toUpperCase() + diet.slice(1);
@@ -54,7 +51,7 @@ const Detail = () => {
           )}
 
           {isNaN(recipeId?.id) && (
-            <Link to={`/upload/${id}`}>
+            <Link to={`/update/${id}`}>
               <button className={style.update}>UPDATE</button>
             </Link>
           )}
@@ -68,16 +65,27 @@ const Detail = () => {
           <h2>{`HealthScore: ${recipeId.healthScore}`}</h2>
         )}
 
-        <h3>Diets: </h3>
-        {dietsUpperCase && <p>{dietsUpperCase.join(", ")}</p>}
+        {dietsUpperCase && (
+          <>
+            <h3>Diets: </h3>
+            <p>{dietsUpperCase.join(", ")}</p>
+          </>
+        )}
       </div>
 
       <div className={style.block2}>
-        <h3>Summary: </h3>
-        <p>{recipeId?.summary}</p>
-
-        <h3>Steps: </h3>
-        {recipeId?.steps && <p>{renderedSteps}</p>}
+        {recipeId && (
+          <>
+            <h3>Summary: </h3>
+            <p>{recipeId.summary}</p>
+          </>
+        )}
+        {recipeId?.steps && (
+          <>
+            <h3>Steps: </h3>
+            <p>{renderedSteps}</p>
+          </>
+        )}
       </div>
     </div>
   );
