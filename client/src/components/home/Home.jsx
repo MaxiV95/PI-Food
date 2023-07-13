@@ -23,15 +23,16 @@ const Home = () => {
   }, []);
 
 	return (
-		<div className={style.homeContainer}>
-			<SearchBar />
-			<div className={style.homeContent}>
-				<h1>RECIPES FINDER</h1>
-				<Paginado page={page} max={max} />
-				<CardsContainer recipes={recipes} />
-			</div>
-		</div>
-	);
+    <div className={style.homeContainer}>
+      <SearchBar />
+      <div className={style.homeContent}>
+        <h1>RECIPES FINDER</h1>
+        <Paginado page={page} max={max} />
+        <CardsContainer recipes={recipes} />
+        <Paginado page={page} max={max} />
+      </div>
+    </div>
+  );
 };
 
 export default Home;
