@@ -31,29 +31,29 @@ Debe poder buscarla independientemente de mayúsculas o minúsculas.
 Si no existe la receta, debe mostrar un mensaje adecuado.
 Debe buscar tanto las de la API como las de la base de datos.*/
 recipes.get("/", async (req, res) => {
-  const { name } = req.query;
+	const { name } = req.query;
 
-  try {
-    // Busca por 'name' en la API y Base de datos
-    const [allRecipesDB, allRecipesAPI] = await Promise.all([
-      searchRecipeDB({ name: name }),
-      searchRecipeAPI({ name: name }),
-    ]);
+	try {
+		// Busca por 'name' en la API y Base de datos
+		const [allRecipesDB, allRecipesAPI] = await Promise.all([
+			searchRecipeDB({ name: name }),
+			//searchRecipeAPI({ name: name }),
+		]);
 
-    const allRecipes = []; // Incorpora las respuestas si son arreglos válidos
-    if (Array.isArray(allRecipesDB)) allRecipes.push(...allRecipesDB);
-    if (Array.isArray(allRecipesAPI)) allRecipes.push(...allRecipesAPI);
+		const allRecipes = []; // Incorpora las respuestas si son arreglos válidos
+		if (Array.isArray(allRecipesDB)) allRecipes.push(...allRecipesDB);
+		//if (Array.isArray(allRecipesAPI)) allRecipes.push(...allRecipesAPI);
 
-    if (allRecipes.length === 0)
-      // Si no encontró maches devuelve el aviso
-      return res
-        .status(400)
-        .json({ message: `No matching recipes found for '${name}'` });
+		if (allRecipes.length === 0)
+			// Si no encontró maches devuelve el aviso
+			return res
+				.status(400)
+				.json({ message: `No matching recipes found for '${name}'` });
 
-    return res.status(200).json(allRecipes);
-  } catch (error) {
-    return res.status(404).json({ error: error.stack });
-  }
+		return res.status(200).json(allRecipes);
+	} catch (error) {
+		return res.status(404).json({ error: error.stack });
+	}
 });
 
 /*📍 POST | /recipes
@@ -63,43 +63,40 @@ Toda la información debe ser recibida por body.
 Debe crear la receta en la base de datos, y esta debe estar relacionada con 
 los tipos de dieta indicados (al menos uno).*/
 recipes.post("/", async (req, res) => {
-  try {
-    const data = req.body;
-    console.log(data);
-    const newRecipe = await updateRecipeDB(data);
-
-    return res.status(200).json(newRecipe);
-  } catch (error) {
-    return res.status(404).json({ error: error.stack });
-  }
+	try {
+		const data = req.body;
+		const dietsArray = data.diets.map((diet) => diet.id);
+		const newRecipe = await updateRecipeDB({ ...data, diets: dietsArray });
+		return res.status(200).json(newRecipe);
+	} catch (error) {
+		console.log(error.stack);
+		return res.status(404).json({ error: error.stack });
+	}
 });
 
 // Editar receta
 recipes.put("/", async (req, res) => {
-  try {
-    const data = req.body;
-    console.log(data);
-    const recipe = await updateRecipeDB(data);
-
-    return res.status(200).json(recipe);
-  } catch (error) {
-    return res.status(404).json({ error: error.stack });
-  }
+	try {
+		const data = req.body;
+		const dietsArray = data.diets.map((diet) => diet.id);
+		const recipe = await updateRecipeDB({ ...data, diets: dietsArray });
+		return res.status(200).json(recipe);
+	} catch (error) {
+		return res.status(404).json({ error: error.stack });
+	}
 });
 
 // Eliminar receta
 recipes.delete("/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-
-    if (isNaN(id)) return await deleteRecipeDB(id);
-
-    return res
-      .status(400)
-      .json({ message: `No matching recipes found for '${id}'` });
-  } catch (error) {
-    return res.status(404).json({ error: error.stack });
-  }
+	try {
+		const { id } = req.params;
+		if (isNaN(id)) return await deleteRecipeDB(id);
+		return res
+			.status(400)
+			.json({ message: `No matching recipes found for '${id}'` });
+	} catch (error) {
+		return res.status(404).json({ error: error.stack });
+	}
 });
 
 module.exports = recipes;

@@ -12,7 +12,7 @@ const getRecipeDbById = async (id) => {
 		include: [
 			{
 				model: Diet,
-				attributes: ["name"],
+				attributes: ["id", "name"],
 				through: { attributes: [] },
 			},
 		],
@@ -39,25 +39,29 @@ const getRecipeDb = async (name) => {
 		include: [
 			{
 				model: Diet,
-				attributes: ["name"],
+				attributes: ["id", "name"],
 				through: { attributes: [] },
 			},
 		],
 	});
 
 	const recipes = recipesDB.map(format);
+	console.log("aaaaa", recipes);
 	return recipes;
 };
 
-const format = (recipe) => ({
-	id: recipe.id,
-	title: recipe.title,
-	image: recipe.image,
-	vegetarian: recipe.vegetarian,
-	vegan: recipe.vegan,
-	glutenFree: recipe.glutenFree,
-	summary: recipe.summary,
-	healthScore: recipe.healthScore,
-	steps: recipe.steps,
-	diets: recipe.Diets.map((diet) => diet.name),
-});
+const format = (recipe) => {
+	console.log("---\n---", recipe.Diets);
+	return {
+		id: recipe.id,
+		title: recipe.title,
+		image: recipe.image,
+		vegetarian: recipe.vegetarian,
+		vegan: recipe.vegan,
+		glutenFree: recipe.glutenFree,
+		summary: recipe.summary,
+		healthScore: recipe.healthScore,
+		steps: recipe.steps,
+		diets: recipe.Diets.map((diet) => diet.dataValues),
+	};
+};

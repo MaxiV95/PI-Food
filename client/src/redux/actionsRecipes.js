@@ -99,10 +99,10 @@ export const getAllDiets = () => {
     console.log("axios diet");
 
     try {
-      // const response = await axios.get("/diets");
-      // const allDiets = response.data;
-      const response = await fetch("/diets.json");
-      let allDiets = await response.json();
+      const response = await axios.get("/diets");
+      const allDiets = response.data;
+      // const response = await fetch("/more/diets.json");
+      // let allDiets = await response.json();
 
       return dispatch(setDiets(allDiets));
     } catch (error) {
@@ -123,10 +123,10 @@ export const getAllRecipes = (key) => {
     console.log("axios recipe");
 
     try {
-      // const response = await axios.get("/recipes");
-      // const allRecipes = response.data;
-      const response = await fetch("/recipes.json");
-      const allRecipes = await response.json();
+      const response = await axios.get("/recipes");
+      const allRecipes = response.data;
+      // const response = await fetch("/more/recipes.json");
+      // const allRecipes = await response.json();
 
       return dispatch(setRecipesAll(allRecipes));
     } catch (error) {
@@ -157,10 +157,10 @@ export const getRecipeById = (id) => {
     console.log("axios id");
 
     try {
-      // const response = await axios.get(`/recipes/${id}`);
-      // const data = response.data;
-      const response = await fetch("/recipeID.json");
-      const data = await response.json();
+      const response = await axios.get(`/recipes/${id}`);
+      const data = response.data;
+      // const response = await fetch("/more/recipeID.json");
+      // const data = await response.json();
       dispatch(setRecipeId(data));
     } catch (error) {
       console.error(error.message);
@@ -239,7 +239,7 @@ export const postRecipe = async (data) => {
   await axios
     .post("/recipes", data)
     .then((res) => alert("Successfully Created"))
-    .catch((err) => alert(err.message));
+    .catch((err) => alert(err));
   return;
 };
 

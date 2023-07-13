@@ -22,7 +22,7 @@ const Home = () => {
   const recipes = recipesShown?.slice(startIndex, endIndex);
 
   useEffect(() => {
-    dispatch(getAllRecipes());
+    dispatch(getAllRecipes("get"));
     dispatch(getAllDiets());
     !recipesShown?.length || (!diets?.length && dispatch(setLoading(true)));
   }, []);
