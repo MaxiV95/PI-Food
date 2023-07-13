@@ -5,7 +5,10 @@ import {
   getAllDiets,
   setLoading,
 } from "../../redux/actionsRecipes";
-import { SearchBar, CardsContainer, Paginado } from "./helpers";
+
+import SearchBar from "./helpers/searchBar/SearchBar";
+import CardsContainer from "./helpers/cardsContainer/CardsContainer";
+import Paginated from "./helpers/paginated/Paginated";
 import style from "./Home.module.css";
 
 const Home = () => {
@@ -25,16 +28,16 @@ const Home = () => {
     dispatch(getAllRecipes("get"));
     dispatch(getAllDiets());
     !recipesShown?.length || (!diets?.length && dispatch(setLoading(true)));
-  }, []);
+  });
 
   return (
     <div className={style.homeContainer}>
       <SearchBar />
       <div className={style.homeContent}>
         <h1>RECIPES FINDER</h1>
-        <Paginado page={page} max={max} />
+        <Paginated page={page} max={max} />
         <CardsContainer recipes={recipes} />
-        <Paginado page={page} max={max} />
+        <Paginated page={page} max={max} />
       </div>
     </div>
   );

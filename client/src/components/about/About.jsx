@@ -17,13 +17,18 @@ export default function About() {
 
         <span>
           <h2>
-            <a href="https://github.com/MaxiV95" target="_blank">
+            <a
+              href="https://github.com/MaxiV95"
+              rel="noreferrer"
+              target="_blank"
+            >
               Github
             </a>
           </h2>
           <h2>
             <a
               href="https://www.linkedin.com/in/maximilianovanmegroot/"
+              rel="noreferrer"
               target="_blank"
             >
               Linkedin

@@ -1,9 +1,9 @@
-import { Card } from "../";
+import Card from "../card/Card";
 import style from "./CardsContainer.module.css";
 
 const CardsContainer = ({ recipes }) => {
   return (
-    <div className={style.cardsContainer}>
+    <div className={style.cardsContain}>
       {recipes &&
         recipes.map((rec) => {
           return (

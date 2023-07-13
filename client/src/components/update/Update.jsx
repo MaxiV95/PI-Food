@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import {
   getAllRecipes,
-  getAllDiets,
   getRecipeById,
-  setLoading,
   handleRecipeFieldChange,
   updateRecipeById,
   postRecipe,
@@ -14,7 +12,7 @@ import validate from "./validate";
 import style from "./Update.module.css";
 import Detail from "../detail/Detail";
 
-const recipeUpdate = () => {
+const RecipeUpdate = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const diets = useSelector((state) => state.recipeStore.dietsAll);
@@ -24,7 +22,7 @@ const recipeUpdate = () => {
   // Al montar
   useEffect(() => {
     return () => dispatch(getRecipeById(undefined));
-  }, []);
+  });
 
   useEffect(() => {
     setErrors(validate(recipeId));
@@ -181,4 +179,4 @@ const recipeUpdate = () => {
   );
 };
 
-export default recipeUpdate;
+export default RecipeUpdate;

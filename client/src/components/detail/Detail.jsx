@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link, useLocation } from "react-router-dom";
 import {
@@ -10,7 +10,7 @@ import {
 } from "../../redux/actionsRecipes";
 import style from "./Detail.module.css";
 
-const Detail = ({ updateDetail, block }) => {
+const Detail = ({ updateDetail = "", block }) => {
   const location = useLocation();
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -21,7 +21,7 @@ const Detail = ({ updateDetail, block }) => {
     dispatch(getAllDiets());
     dispatch(setLoading(true));
     return () => dispatch(getRecipeById(undefined));
-  }, []);
+  });
 
   const renderedSteps = recipeId?.steps?.map((step, index) => (
     <React.Fragment key={index}>

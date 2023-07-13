@@ -238,7 +238,7 @@ export const deleteRecipeById = async (id) => {
 export const postRecipe = async (data) => {
   await axios
     .post("/recipes", data)
-    .then((res) => alert("Successfully Created"))
+    .then(() => alert("Successfully Created"))
     .catch((err) => alert(err));
   return;
 };
@@ -248,7 +248,7 @@ export const updateRecipeById = async (data) => {
   console.log(data);
   await axios
     .put("/recipes", data)
-    .then((res) => alert("Successfully updated"))
+    .then(() => alert("Successfully updated"))
     .catch((err) => alert(err.message));
   return;
 };

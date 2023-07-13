@@ -87,11 +87,10 @@ web_modules/
 # Next.js build output
 .next
 out
+/client/dist/more
 
 # Nuxt.js build / generate output
 .nuxt
-dist
-dist-ssr
 *.local
 
 # Gatsby files
