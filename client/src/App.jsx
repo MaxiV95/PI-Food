@@ -1,7 +1,15 @@
 import style from "./App.module.css";
 import { useLocation, Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import { NavBar, Landing, Home, Detail, Update, NotFound } from "./components/";
+import {
+  NavBar,
+  Landing,
+  Home,
+  Detail,
+  Update,
+  About,
+  NotFound,
+} from "./components/";
 
 function App() {
   const location = useLocation();
@@ -25,7 +33,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/update/:id?" element={<Update />} />
-        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
