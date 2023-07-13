@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import {
+  getAllRecipes,
   getAllDiets,
   getRecipeById,
-  setRecipeId,
+  setLoading,
+  handleRecipeFieldChange,
   updateRecipeById,
+  postRecipe,
 } from "../../redux/actionsRecipes";
 import validate from "./validate";
 import style from "./Update.module.css";
@@ -16,111 +19,44 @@ const recipeUpdate = () => {
   const { id } = useParams();
   const diets = useSelector((state) => state.recipeStore.dietsAll);
   const recipeId = useSelector((state) => state.recipeStore.recipeId);
-  const [recipeUpdate, setRecipeUpdate] = useState({
-    id: undefined,
-    title: "",
-    summary: "",
-    healthScore: 0,
-    steps: "",
-    image: "",
-    diets: {},
-  });
   const [errors, setErrors] = useState({});
 
+  // Al montar
   useEffect(() => {
-    dispatch(getRecipeById(id));
-    dispatch(getAllDiets());
-    return () => dispatch(setRecipeId(undefined));
+    return () => dispatch(getRecipeById(undefined));
   }, []);
 
   useEffect(() => {
-    if (recipeId) {
-      setRecipeUpdate({
-        id: recipeId.id,
-        title: recipeId.title,
-        summary: recipeId.summary,
-        healthScore: recipeId.healthScore,
-        steps: recipeId.steps ? recipeId.steps.join("\n") : "",
-        image: recipeId.image,
-        diets: {},
-      });
-
-      for (const diet of recipeId.diets) {
-        const dietId = diets.find((dietFind) => dietFind.name === diet)?.id;
-        if (dietId)
-          setRecipeUpdate((prevRecipeUpdate) => ({
-            ...prevRecipeUpdate,
-            diets: {
-              ...prevRecipeUpdate.diets,
-              [dietId]: true,
-            },
-          }));
-      }
-    }
+    setErrors(validate(recipeId));
   }, [recipeId]);
 
   // Al cambiar algún campo
-  const handleChange = (event) => {
+  const handle = (event) => {
     const { name, value } = event.target;
-    setRecipeUpdate({
-      ...recipeUpdate,
-      [name]: value,
-    });
-    setErrors(
-      validate({
-        ...recipeUpdate,
-        [name]: value,
-      })
-    );
+    dispatch(handleRecipeFieldChange({ name, value }));
+  };
+  const handleSpecial = (event) => {
+    const { name, value } = event.target;
+    if (name === "steps") {
+      dispatch(handleRecipeFieldChange({ name, value: value.split("\n") }));
+    }
   };
 
   // Al cambiar algún check
   const checkHandle = (event) => {
-    const { checked, value } = event.target;
-    setRecipeUpdate({
-      ...recipeUpdate,
-      diets: {
-        ...recipeUpdate.diets,
-        [value]: checked,
-      },
-    });
-    setErrors(
-      validate({
-        ...recipeUpdate,
-        diets: {
-          ...recipeUpdate.diets,
-          [value]: checked,
-        },
-      })
-    );
+    const { name, checked, value, title } = event.target;
+    let diets = [...recipeId.diets];
+    if (checked) diets.push({ id: value, name: title });
+    else diets = diets.filter((diet) => diet.id !== value);
+    dispatch(handleRecipeFieldChange({ name, value: diets }));
   };
 
-  // Ajusta el Formato de valores
-  const Format = (recipe) => {
-    return {
-      id: id,
-      title:
-        recipe.title.charAt(0).toUpperCase() +
-        recipe.title.slice(1).toLowerCase(),
-      image: recipe.image,
-      vegetarian: recipe.vegetarian,
-      vegan: recipe.vegan,
-      glutenFree: recipe.glutenFree,
-      summary: recipe.summary.replace("\n", " "),
-      healthScore: recipe.healthScore,
-      steps: recipe.steps.split("\n"),
-      diets: Object.entries(recipe.diets) // Array de matrices clave-valor
-        .filter(([key, value]) => value === true) // Solo matrices con true
-        .map(([key, value]) => key), // solo las keys (id de dietas)
-    };
-  };
-
+  // Enviar cambios
   const handlerSubmit = async (event) => {
     event.preventDefault();
-    // En caso de que no existan errores postea la receta
     if (!Object.keys(errors).length)
-      await updateRecipeById(Format(recipeUpdate));
-    dispatch(getAllRecipes());
+      id ? updateRecipeById(recipeId) : postRecipe(recipeId);
+    dispatch(getAllRecipes("get"));
   };
 
   return (
@@ -137,9 +73,9 @@ const recipeUpdate = () => {
             <label htmlFor="title">Title: </label>
             <input
               type="text"
-              value={recipeUpdate.title}
+              value={recipeId?.title}
               name="title"
-              onChange={handleChange}
+              onChange={handle}
             />
             {errors.title && (
               <span className={style.errores}>{errors.title}</span>
@@ -150,9 +86,9 @@ const recipeUpdate = () => {
             <label htmlFor="image">Image URL: </label>
             <input
               type="url"
-              value={recipeUpdate.image}
+              value={recipeId?.image}
               name="image"
-              onChange={handleChange}
+              onChange={handle}
             />
             {errors.image && (
               <span className={style.errores}>{errors.image}</span>
@@ -165,9 +101,9 @@ const recipeUpdate = () => {
               min="0"
               max="100"
               type="number"
-              value={recipeUpdate.healthScore}
+              value={recipeId?.healthScore}
               name="healthScore"
-              onChange={handleChange}
+              onChange={handle}
             />
             {errors.healthScore && (
               <span className={style.errores}>{errors.healthScore}</span>
@@ -177,18 +113,23 @@ const recipeUpdate = () => {
           <div>
             <h3>Select Diets: </h3>
             <div className={style.allDiets}>
-              {diets.map((diet) => {
+              {diets.map((dietRecipe) => {
                 return (
-                  <React.Fragment key={diet.id}>
+                  <React.Fragment key={dietRecipe.id}>
                     <span>
                       <input
                         type="checkbox"
-                        value={diet.id}
+                        value={dietRecipe.id}
                         name="diets"
-                        checked={recipeUpdate?.diets[diet.id] || false}
+                        title={dietRecipe.name}
+                        checked={
+                          recipeId?.diets?.some(
+                            (diet) => diet.id === dietRecipe.id
+                          ) || false
+                        }
                         onChange={checkHandle}
                       />
-                      <label htmlFor="diets">{diet.name}</label>
+                      <label htmlFor="diets">{dietRecipe.name}</label>
                     </span>
                   </React.Fragment>
                 );
@@ -205,9 +146,9 @@ const recipeUpdate = () => {
             <textarea
               cols="30"
               rows="10"
-              value={recipeUpdate.summary}
+              value={recipeId.summary}
               name="summary"
-              onChange={handleChange}
+              onChange={handle}
             />
             {errors.summary && (
               <span className={style.errores}>{errors.summary}</span>
@@ -220,23 +161,20 @@ const recipeUpdate = () => {
             <textarea
               cols="30"
               rows="10"
-              value={recipeUpdate.steps}
+              value={recipeId?.steps?.join("\n")}
               name="steps"
-              onChange={handleChange}
+              onChange={handleSpecial}
             />
             {errors.steps && (
               <span className={style.errores}>{errors.steps}</span>
             )}
           </h3>
+          <button type="submit">SUBMIT</button>
         </form>
-
-        <button type="submit" disabled={Object.keys(errors).length}>
-          SUBMIT
-        </button>
       </div>
 
       <div className={style.detailContainer}>
-        <h1>PREVIEW</h1>
+        <h1 className={style.preview}>-- PREVIEW --</h1>
         <Detail updateDetail={style.updateDetail} block={style.block} />
       </div>
     </div>

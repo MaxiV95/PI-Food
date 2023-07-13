@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link, useLocation } from "react-router-dom";
 import {
   getAllRecipes,
-  setRecipeId,
+  getAllDiets,
   getRecipeById,
   deleteRecipeById,
+  setLoading,
 } from "../../redux/actionsRecipes";
 import style from "./Detail.module.css";
 
@@ -17,7 +18,9 @@ const Detail = ({ updateDetail, block }) => {
 
   useEffect(() => {
     dispatch(getRecipeById(id));
-    return () => dispatch(setRecipeId(undefined));
+    dispatch(getAllDiets());
+    dispatch(setLoading(true));
+    return () => dispatch(getRecipeById(undefined));
   }, []);
 
   const renderedSteps = recipeId?.steps?.map((step, index) => (
@@ -29,14 +32,14 @@ const Detail = ({ updateDetail, block }) => {
 
   const deleteRecipe = async () => {
     await deleteRecipeById(id);
-    dispatch(getAllRecipes());
+    dispatch(getAllRecipes("get"));
     alert("successfully removed");
   };
 
   return (
     <div className={`${style.detailContainer} ${updateDetail}`}>
       <div className={`${style.block1} ${block}`}>
-        {!location.pathname.startsWith("/update/") && (
+        {location.pathname.startsWith("/detail/") && (
           <span>
             <Link to="/home">
               <button className={style.close}>CLOSE</button>
@@ -44,7 +47,9 @@ const Detail = ({ updateDetail, block }) => {
 
             {isNaN(recipeId?.id) && (
               <Link to="/home">
-                <button className={style.delete}>DELETE</button>
+                <button className={style.delete} onClick={deleteRecipe}>
+                  DELETE
+                </button>
               </Link>
             )}
 
@@ -57,19 +62,11 @@ const Detail = ({ updateDetail, block }) => {
         )}
 
         <h1>{recipeId?.title}</h1>
-        <img src={recipeId?.image} alt={recipeId?.title} />
-        <h2>ID: {recipeId?.id}</h2>
-
-        {recipeId?.healthScore && (
-          <h2>{`HealthScore: ${recipeId.healthScore}`}</h2>
-        )}
-
-        {recipeId?.diets && (
-          <>
-            <h3>Diets: </h3>
-            <p>{recipeId.diets.map((diet) => diet.name).join(", ")}</p>
-          </>
-        )}
+        <img src={recipeId?.image} alt={"Image not found"} />
+        {recipeId?.id && <h2>ID: {recipeId.id}</h2>}
+        <h2>{`HealthScore: ${recipeId?.healthScore}`}</h2>
+        <h3>Diets: </h3>
+        <p>{recipeId?.diets?.map((diet) => diet.name).join(", ")}</p>
       </div>
 
       <div className={`${style.block2} ${block}`}>
