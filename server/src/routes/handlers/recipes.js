@@ -37,12 +37,12 @@ recipes.get("/", async (req, res) => {
 		// Busca por 'name' en la API y Base de datos
 		const [allRecipesDB, allRecipesAPI] = await Promise.all([
 			searchRecipeDB({ name: name }),
-			//searchRecipeAPI({ name: name }),
+			searchRecipeAPI({ name: name }),
 		]);
 
 		const allRecipes = []; // Incorpora las respuestas si son arreglos válidos
 		if (Array.isArray(allRecipesDB)) allRecipes.push(...allRecipesDB);
-		//if (Array.isArray(allRecipesAPI)) allRecipes.push(...allRecipesAPI);
+		if (Array.isArray(allRecipesAPI)) allRecipes.push(...allRecipesAPI);
 
 		if (allRecipes.length === 0)
 			// Si no encontró maches devuelve el aviso
