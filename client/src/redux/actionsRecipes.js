@@ -90,7 +90,6 @@ export const getAllDiets = () => {
     try {
       const response = await axios.get("/diets");
       const allDiets = response.data;
-      console.log("\n", response, "\n\n", allDiets);
       return dispatch(setDiets(allDiets));
     } catch (error) {
       console.log(error.message);
@@ -107,9 +106,8 @@ export const getAllRecipes = (key) => {
     if (recipesAll.length > 0 && !key) return;
 
     try {
-      const response = await axios.get("/recipes");
-      const allRecipes = response.data;
-      return dispatch(setRecipesAll(allRecipes));
+      const response = await getRecipes();
+      return dispatch(setRecipesAll(response));
     } catch (error) {
       console.log(error.message);
     }
@@ -118,7 +116,7 @@ export const getAllRecipes = (key) => {
 
 // Busca receta por id
 export const getRecipeById = (id) => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     if (!id)
       return dispatch(
         setRecipeId({
@@ -137,7 +135,8 @@ export const getRecipeById = (id) => {
       const data = response.data;
       dispatch(setRecipeId(data));
     } catch (error) {
-      console.log(`There is no recipe with the ID: ${id} ${error.message}`);
+      alert(`There is no recipe with the ID: ${id}`);
+      console.log(error.message);
     }
   };
 };
@@ -195,29 +194,48 @@ export const updateSelected = (option) => {
 };
 
 // Elimina receta por id
-export const deleteRecipeById = async (id) => {
-  try {
-    const response = await axios.delete(`/recipes/${id}`);
-    return response.data;
-  } catch (error) {
-    alert(error.message + `There is no recipe with the ID: ${id}`);
-  }
+export const deleteRecipeById = (id) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`/recipes/${id}`);
+      alert("successfully removed");
+      const response = await getRecipes();
+      return dispatch(setRecipesAll(response));
+    } catch (error) {
+      alert(error.message + `There is no recipe with the ID: ${id}`);
+    }
+  };
 };
 
 // Postea una nueva receta
-export const postRecipe = async (data) => {
-  await axios
-    .post("/recipes", data)
-    .then(() => alert("Successfully Created"))
-    .catch((err) => alert(err));
-  return;
+export const postRecipe = (data) => {
+  return async (dispatch) => {
+    try {
+      await axios.post("/recipes", data);
+      alert("Successfully created");
+      const response = await getRecipes();
+      return dispatch(setRecipesAll(response));
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 };
 
 // Actualiza receta por id
-export const updateRecipeById = async (data) => {
-  await axios
-    .put("/recipes", data)
-    .then(() => alert("Successfully updated"))
-    .catch((err) => alert(err.message));
-  return;
+export const updateRecipeById = (data) => {
+  return async (dispatch) => {
+    try {
+      await axios.put("/recipes", data);
+      alert("Successfully updated");
+      const response = await getRecipes();
+      return dispatch(setRecipesAll(response));
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+};
+
+const getRecipes = async () => {
+  const response = await axios.get("/recipes");
+  return response.data;
 };

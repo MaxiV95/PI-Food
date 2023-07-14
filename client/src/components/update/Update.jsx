@@ -53,8 +53,9 @@ const RecipeUpdate = () => {
   const handlerSubmit = async (event) => {
     event.preventDefault();
     if (!Object.keys(errors).length)
-      id ? updateRecipeById(recipeId) : postRecipe(recipeId);
-    dispatch(getAllRecipes("get"));
+      id
+        ? dispatch(updateRecipeById(recipeId))
+        : dispatch(postRecipe(recipeId));
   };
 
   return (

@@ -89,11 +89,12 @@ recipes.put("/", async (req, res) => {
 recipes.delete("/:id", async (req, res) => {
 	try {
 		const { id } = req.params;
-		if (isNaN(id)) return await deleteRecipeDB(id);
-		return res
-			.status(400)
-			.json({ message: `No matching recipes found for '${id}'` });
+		if (!isNaN(id)) return res.status(400).json({ message: `No matching recipes found for '${id}'` });
+		const deleted = await deleteRecipeDB(id);
+		console.log('deleted: ', deleted);
+		return res.status(200).json({ message: `successfully removed '${id}'` });
 	} catch (error) {
+		console.log(error.stack);
 		return res.status(404).json({ error: error.stack });
 	}
 });

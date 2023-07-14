@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link, useLocation } from "react-router-dom";
 import {
-  getAllRecipes,
   getAllDiets,
   getRecipeById,
   deleteRecipeById,
@@ -29,12 +28,6 @@ const Detail = ({ updateDetail = "", block = "" }) => {
     </React.Fragment>
   ));
 
-  const deleteRecipe = async () => {
-    await deleteRecipeById(id);
-    dispatch(getAllRecipes("get"));
-    alert("successfully removed");
-  };
-
   return (
     <div className={`${style.detailContainer} ${updateDetail}`}>
       <div className={`${style.block1} ${block}`}>
@@ -45,11 +38,12 @@ const Detail = ({ updateDetail = "", block = "" }) => {
             </Link>
 
             {isNaN(recipeId?.id) && (
-              <Link to="/home">
-                <button className={style.delete} onClick={deleteRecipe}>
-                  DELETE
-                </button>
-              </Link>
+              <button
+                className={style.delete}
+                onClick={() => dispatch(deleteRecipeById(id))}
+              >
+                DELETE
+              </button>
             )}
 
             {isNaN(recipeId?.id) && (
