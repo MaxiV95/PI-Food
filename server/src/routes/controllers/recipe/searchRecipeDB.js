@@ -46,12 +46,10 @@ const getRecipeDb = async (name) => {
 	});
 
 	const recipes = recipesDB.map(format);
-	console.log("aaaaa", recipes);
 	return recipes;
 };
 
 const format = (recipe) => {
-	console.log("---\n---", recipe.Diets);
 	return {
 		id: recipe.id,
 		title: recipe.title,

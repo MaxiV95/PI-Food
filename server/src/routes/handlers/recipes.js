@@ -69,7 +69,6 @@ recipes.post("/", async (req, res) => {
 		const newRecipe = await updateRecipeDB({ ...data, diets: dietsArray });
 		return res.status(200).json(newRecipe);
 	} catch (error) {
-		console.log(error.stack);
 		return res.status(404).json({ error: error.stack });
 	}
 });
