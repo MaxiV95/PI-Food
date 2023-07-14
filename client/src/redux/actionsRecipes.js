@@ -100,6 +100,7 @@ export const getAllDiets = () => {
     try {
       const response = await axios.get("/diets");
       const allDiets = response.data;
+      console.log("\n", response, "\n\n", allDiets);
       return dispatch(setDiets(allDiets));
     } catch (error) {
       console.log(error.message);
