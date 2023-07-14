@@ -1,10 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getAllRecipes,
-  getAllDiets,
-  setLoading,
-} from "../../redux/actionsRecipes";
+import { getAllRecipes, getAllDiets } from "../../redux/actionsRecipes";
 
 import SearchBar from "./helpers/searchBar/SearchBar";
 import RecipesContainer from "./helpers/recipesContainer/RecipesContainer";
@@ -25,10 +21,9 @@ const Home = () => {
   const recipes = recipesShown?.slice(startIndex, endIndex);
 
   useEffect(() => {
-    dispatch(getAllRecipes("get"));
+    dispatch(getAllRecipes());
     dispatch(getAllDiets());
-    !recipesShown?.length || (!diets?.length && dispatch(setLoading(true)));
-  });
+  }, []);
 
   return (
     <div className={style.homeContainer}>

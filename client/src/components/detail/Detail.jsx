@@ -6,7 +6,6 @@ import {
   getAllDiets,
   getRecipeById,
   deleteRecipeById,
-  setLoading,
 } from "../../redux/actionsRecipes";
 import style from "./Detail.module.css";
 import PropTypes from "prop-types";
@@ -20,9 +19,8 @@ const Detail = ({ updateDetail = "", block = "" }) => {
   useEffect(() => {
     dispatch(getRecipeById(id));
     dispatch(getAllDiets());
-    dispatch(setLoading(true));
     return () => dispatch(getRecipeById(undefined));
-  });
+  }, []);
 
   const renderedSteps = recipeId?.steps?.map((step, index) => (
     <React.Fragment key={index}>

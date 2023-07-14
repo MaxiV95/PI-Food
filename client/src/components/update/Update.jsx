@@ -22,7 +22,7 @@ const RecipeUpdate = () => {
   // Al montar
   useEffect(() => {
     return () => dispatch(getRecipeById(undefined));
-  });
+  }, []);
 
   useEffect(() => {
     setErrors(validate(recipeId));

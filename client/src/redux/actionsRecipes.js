@@ -24,7 +24,6 @@ const initialState = {
   },
 
   page: 1,
-  loading: false,
 };
 
 export const recipeStore = createSlice({
@@ -33,7 +32,6 @@ export const recipeStore = createSlice({
   reducers: {
     setDiets: (state, { payload }) => {
       state.dietsAll = payload;
-      state.loading = false;
     },
     setRecipesAll: (state, { payload }) => {
       state.recipesAll = payload;
@@ -45,17 +43,14 @@ export const recipeStore = createSlice({
         byOrder: "",
       };
       state.page = 1;
-      state.loading = false;
     },
     setRecipesByName: (state, { payload }) => {
       state.recipesShown = payload;
       state.recipesByName = payload;
       state.page = 1;
-      state.loading = false;
     },
     setRecipeId: (state, { payload }) => {
       state.recipeId = { ...payload };
-      state.loading = false;
     },
     handleRecipeFieldChange: (state, { payload }) => {
       const { name, value } = payload;
@@ -72,9 +67,6 @@ export const recipeStore = createSlice({
     setPage: (state, { payload }) => {
       state.page = payload;
     },
-    setLoading: (state, { payload }) => {
-      state.loading = payload;
-    },
   },
 });
 export const {
@@ -85,16 +77,14 @@ export const {
   handleRecipeFieldChange,
   setSelected,
   setPage,
-  setLoading,
 } = recipeStore.actions;
 export default recipeStore.reducer;
 
 // Trae y guarda las dietas en dietsAll si esta vacío
 export const getAllDiets = () => {
   return async (dispatch, getState) => {
-    const { dietsAll, loading } = getState().recipeStore;
+    const { dietsAll } = getState().recipeStore;
 
-    if (loading) return;
     if (dietsAll.length > 0) return;
 
     try {
@@ -112,9 +102,8 @@ export const getAllDiets = () => {
 // Si ya existen en recipesAll no vuelve a llamar al back
 export const getAllRecipes = (key) => {
   return async (dispatch, getState) => {
-    const { recipesAll, loading } = getState().recipeStore;
+    const { recipesAll } = getState().recipeStore;
 
-    if (loading) return;
     if (recipesAll.length > 0 && !key) return;
 
     try {
@@ -130,9 +119,6 @@ export const getAllRecipes = (key) => {
 // Busca receta por id
 export const getRecipeById = (id) => {
   return async (dispatch, getState) => {
-    const { loading } = getState().recipeStore;
-
-    if (loading) return;
     if (!id)
       return dispatch(
         setRecipeId({
