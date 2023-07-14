@@ -35,7 +35,7 @@ export const recipeStore = createSlice({
     },
     setRecipesAll: (state, { payload }) => {
       state.recipesAll = payload;
-      state.recipesShown = payload;
+      state.recipesShown = [...payload];
       state.recipesByName = [];
       state.selected = {
         byDiet: "",
@@ -99,11 +99,11 @@ export const getAllDiets = () => {
 
 // Trae y guarda las recetas en recipesAll y recipesShown
 // Si ya existen en recipesAll no vuelve a llamar al back
-export const getAllRecipes = (key) => {
+export const getAllRecipes = () => {
   return async (dispatch, getState) => {
     const { recipesAll } = getState().recipeStore;
 
-    if (recipesAll.length > 0 && !key) return;
+    if (recipesAll.length > 0) return dispatch(setRecipesAll(recipesAll));
 
     try {
       const response = await getRecipes();
