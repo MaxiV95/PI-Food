@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const SearchIcon = ({ size = 19, color = "#ffffff" }) => (
   <svg
     aria-hidden="true"
@@ -20,4 +22,10 @@ const SearchIcon = ({ size = 19, color = "#ffffff" }) => (
     />
   </svg>
 );
+
+SearchIcon.propTypes = {
+  size: PropTypes.number,
+  color: PropTypes.string,
+};
+
 export default SearchIcon;

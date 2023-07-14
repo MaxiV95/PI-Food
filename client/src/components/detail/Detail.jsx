@@ -9,8 +9,9 @@ import {
   setLoading,
 } from "../../redux/actionsRecipes";
 import style from "./Detail.module.css";
+import PropTypes from "prop-types";
 
-const Detail = ({ updateDetail = "", block }) => {
+const Detail = ({ updateDetail = "", block = "" }) => {
   const location = useLocation();
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -85,6 +86,11 @@ const Detail = ({ updateDetail = "", block }) => {
       </div>
     </div>
   );
+};
+
+Detail.propTypes = {
+  updateDetail: PropTypes.string,
+  block: PropTypes.string,
 };
 
 export default Detail;

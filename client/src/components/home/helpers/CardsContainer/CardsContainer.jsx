@@ -1,5 +1,6 @@
 import Card from "../card/Card";
 import style from "./CardsContainer.module.css";
+import PropTypes from "prop-types";
 
 const CardsContainer = ({ recipes }) => {
   return (
@@ -18,6 +19,10 @@ const CardsContainer = ({ recipes }) => {
         })}
     </div>
   );
+};
+
+CardsContainer.propTypes = {
+  recipes: PropTypes.array.isRequired,
 };
 
 export default CardsContainer;
