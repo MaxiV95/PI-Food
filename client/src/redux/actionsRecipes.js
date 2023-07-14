@@ -96,17 +96,14 @@ export const getAllDiets = () => {
 
     if (loading) return;
     if (dietsAll.length > 0) return;
-    console.log("axios diet");
 
     try {
       const response = await axios.get("/diets");
       const allDiets = response.data;
-      // const response = await fetch("/more/diets.json");
-      // let allDiets = await response.json();
-
+      console.log(allDiets);
       return dispatch(setDiets(allDiets));
     } catch (error) {
-      console.error(error);
+      console.log(error.message);
     }
   };
 };
@@ -118,19 +115,14 @@ export const getAllRecipes = (key) => {
     const { recipesAll, loading } = getState().recipeStore;
 
     if (loading) return;
-    if (recipesAll.length > 0 && !key)
-      return dispatch(setRecipesAll(recipesAll));
-    console.log("axios recipe");
+    if (recipesAll.length > 0 && !key) return;
 
     try {
       const response = await axios.get("/recipes");
       const allRecipes = response.data;
-      // const response = await fetch("/more/recipes.json");
-      // const allRecipes = await response.json();
-
       return dispatch(setRecipesAll(allRecipes));
     } catch (error) {
-      console.error(error);
+      console.log(error.message);
     }
   };
 };
@@ -154,17 +146,12 @@ export const getRecipeById = (id) => {
         })
       );
 
-    console.log("axios id");
-
     try {
       const response = await axios.get(`/recipes/${id}`);
       const data = response.data;
-      // const response = await fetch("/more/recipeID.json");
-      // const data = await response.json();
       dispatch(setRecipeId(data));
     } catch (error) {
-      console.error(error.message);
-      console.error(`There is no recipe with the ID: ${id}`);
+      console.log(`There is no recipe with the ID: ${id} ${error.message}`);
     }
   };
 };
@@ -177,8 +164,7 @@ export const getRecipeByName = (name) => {
       const recipesByName = response.data;
       return dispatch(setRecipesByName(recipesByName));
     } catch (error) {
-      console.error(error);
-      alert(`There is no recipe named ${name}`);
+      alert(`There is no recipe named ${name} ${error.message}`);
     }
   };
 };
@@ -193,7 +179,6 @@ export const updateSelected = (option) => {
     let select = { ...selected, ...option };
 
     // Por tipo de dieta
-    console.log(select.byDiet);
     if (select.byDiet.length)
       selectedRecipes = selectedRecipes.filter((recipe) =>
         recipe.diets.some((diet) => diet.name === select.byDiet)
@@ -229,7 +214,6 @@ export const deleteRecipeById = async (id) => {
     const response = await axios.delete(`/recipes/${id}`);
     return response.data;
   } catch (error) {
-    console.error(error);
     alert(error.message + `There is no recipe with the ID: ${id}`);
   }
 };
@@ -245,7 +229,6 @@ export const postRecipe = async (data) => {
 
 // Actualiza receta por id
 export const updateRecipeById = async (data) => {
-  console.log(data);
   await axios
     .put("/recipes", data)
     .then(() => alert("Successfully updated"))

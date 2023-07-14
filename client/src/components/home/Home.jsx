@@ -7,7 +7,7 @@ import {
 } from "../../redux/actionsRecipes";
 
 import SearchBar from "./helpers/searchBar/SearchBar";
-import CardsContainer from "./helpers/cardsContainer/CardsContainer";
+import RecipesContainer from "./helpers/recipesContainer/RecipesContainer";
 import Paginated from "./helpers/paginated/Paginated";
 import style from "./Home.module.css";
 
@@ -36,7 +36,7 @@ const Home = () => {
       <div className={style.homeContent}>
         <h1>RECIPES FINDER</h1>
         <Paginated page={page} max={max} />
-        <CardsContainer recipes={recipes} />
+        <RecipesContainer recipes={recipes} />
         <Paginated page={page} max={max} />
       </div>
     </div>
