@@ -1,7 +1,8 @@
 import Card from "../card/Card";
-import style from "./CardsContainer.module.css";
+import style from "./RecipesContainer.module.css";
+import PropTypes from "prop-types";
 
-const CardsContainer = ({ recipes }) => {
+const RecipesContainer = ({ recipes }) => {
   return (
     <div className={style.cardsContain}>
       {recipes &&
@@ -20,4 +21,8 @@ const CardsContainer = ({ recipes }) => {
   );
 };
 
-export default CardsContainer;
+RecipesContainer.propTypes = {
+  recipes: PropTypes.array.isRequired,
+};
+
+export default RecipesContainer;

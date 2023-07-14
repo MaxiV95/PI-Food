@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import style from "./NavBar.module.css";
+import PropTypes from "prop-types";
 
 const NavBar = ({ togglePalette }) => {
-	return (
+  return (
     <div className={style.navBarContainer}>
       <span>
         <Link to="/">
@@ -23,6 +24,10 @@ const NavBar = ({ togglePalette }) => {
       </span>
     </div>
   );
+};
+
+NavBar.propTypes = {
+  togglePalette: PropTypes.func.isRequired,
 };
 
 export default NavBar;

@@ -9,9 +9,7 @@ enlace.href = `data:text/json;charset=utf-8,${encodeURIComponent(
 )}`;
 enlace.download = nombreArchivo;
 enlace.click();
-console.log("Respuesta guardada en archivo JSON");
 
 //simular petición leyendo un json
 const responses = await fetch("/recipes.json");
 const allRecipes = await responses.json();
-console.log(allRecipes);
