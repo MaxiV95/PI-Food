@@ -1,59 +1,53 @@
 const { Recipe, conn } = require("../../../db");
 
 const updateRecipeDB = async ({
-  id,
-  title,
-  image,
-  vegetarian,
-  vegan,
-  glutenFree,
-  summary,
-  healthScore,
-  steps,
-  diets,
+	id,
+	title,
+	image,
+	summary,
+	healthScore,
+	steps,
+	diets,
 }) => {
-  // Inicia la transacción
-  const transaction = await conn.transaction();
+	// Inicia la transacción
+	const transaction = await conn.transaction();
 
-  const validatedData = control({
-    title,
-    image,
-    vegetarian,
-    vegan,
-    glutenFree,
-    summary,
-    healthScore,
-    steps,
-    diets,
-  });
+	const validatedData = control({
+		title,
+		image,
+		summary,
+		healthScore,
+		steps,
+		diets,
+	});
 
-  try {
-    let recipe;
-    if (id) {
-      // Si llega id se actualiza la receta
-      recipe = await Recipe.findByPk(id, { transaction });
-      if (!recipe) throw new Error(`Recipe with id: ${id} not found.`);
-      await recipe.update(validatedData, { transaction });
-    } else {
-      // Caso contrario se crea
-      if (await Recipe.findOne({ where: { title: title } }))
-        throw new Error("Recipe title already exists.");
-      recipe = await Recipe.create(validatedData, { transaction });
-    }
-    // Agrega los tipos de dieta relacionados a la receta
-    await recipe.setDiets(diets, { transaction });
+	try {
+		let recipe;
+		if (id) {
+			// Si llega id se actualiza la receta
+			recipe = await Recipe.findByPk(id, { transaction });
+			if (!recipe) throw new Error(`Recipe with id: ${id} not found.`);
+			await recipe.update(validatedData, { transaction });
+		} else {
+			// Caso contrario se crea
+			if (await Recipe.findOne({ where: { title: title } }))
+				throw new Error("Recipe title already exists.");
+			recipe = await Recipe.create(validatedData, { transaction });
+		}
+		// Agrega los tipos de dieta relacionados a la receta
+		await recipe.setDiets(diets, { transaction });
 
-    // Confirma la transacción
-    await transaction.commit();
+		// Confirma la transacción
+		await transaction.commit();
 
-    return recipe;
-  } catch (error) {
-    if (transaction) {
-      await transaction.rollback();
-    }
+		return recipe;
+	} catch (error) {
+		if (transaction) {
+			await transaction.rollback();
+		}
 
-    throw error;
-  }
+		throw error;
+	}
 };
 
 module.exports = updateRecipeDB;

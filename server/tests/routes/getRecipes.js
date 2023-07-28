@@ -68,17 +68,14 @@ xdescribe("Recipes routes", () => {
       });
       const res = await agent.get(`/recipes/${recipe2.id}`);
       expect(res.body).to.deep.equal({
-        id: recipe2.id,
-        title: recipe2.title,
-        summary: recipe2.summary,
-        healthScore: recipe2.healthScore,
-        steps: recipe2.steps,
-        image: recipe2.image,
-        glutenFree: false,
-        vegan: false,
-        vegetarian: false,
-        diets: [],
-      });
+				id: recipe2.id,
+				title: recipe2.title,
+				summary: recipe2.summary,
+				healthScore: recipe2.healthScore,
+				steps: recipe2.steps,
+				image: recipe2.image,
+				diets: [],
+			});
     });
     it("should respond with 404 status if params is not a valid id", async () => {
       const response = await agent.get("/recipes/1a2s3d");
