@@ -193,20 +193,6 @@ export const updateSelected = (option) => {
   };
 };
 
-// Elimina receta por id
-export const deleteRecipeById = (id) => {
-  return async (dispatch) => {
-    try {
-      await axios.delete(`/recipes/${id}`);
-      alert("successfully removed");
-      const response = await getRecipes();
-      return dispatch(setRecipesAll(response));
-    } catch (error) {
-      alert(error.message + `There is no recipe with the ID: ${id}`);
-    }
-  };
-};
-
 // Postea una nueva receta
 export const postRecipe = (data) => {
   return async (dispatch) => {
@@ -231,6 +217,21 @@ export const updateRecipeById = (data) => {
       return dispatch(setRecipesAll(response));
     } catch (error) {
       console.log(error.message);
+    }
+  };
+};
+
+// Elimina receta por id
+export const deleteRecipeById = (id) => {
+  return async (dispatch, getState) => {
+    const { recipesAll } = getState().recipeStore;
+    try {
+      await axios.delete(`/recipes/${id}`);
+      alert("successfully removed");
+      const recipes = recipesAll.filter((recipe) => recipe.id !== id);
+      return dispatch(setRecipesAll(recipes));
+    } catch (error) {
+      return alert(error.message + `There is no recipe with the ID: ${id}`);
     }
   };
 };
