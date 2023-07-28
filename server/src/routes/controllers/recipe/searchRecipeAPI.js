@@ -51,7 +51,8 @@ const formatRecipe = (recipe, dietsDB) => {
 		image: recipe.image,
 		summary: recipe.summary.replace(/(<([^>]+)>)/gi, ""),
 		healthScore: recipe.healthScore,
-		steps: recipe.analyzedInstructions[0]?.steps.map((step) => step.step),
+		//steps: recipe.analyzedInstructions[0]?.steps.map((step) => step.step),
+		steps: recipe.steps,
 		diets: diets,
 	};
 };
