@@ -1,0 +1,8 @@
+GET http://localhost:3001/diets
+Content-Type: application/json
+Authorization: Bearer asd123
+
+{
+  "id": 1,
+  "name": "maxi"
+}
