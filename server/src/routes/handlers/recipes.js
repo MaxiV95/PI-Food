@@ -11,17 +11,17 @@ La receta es recibida por parámetro (ID).
 Tiene que incluir los datos de los tipos de dietas asociados a la receta.
 Debe funcionar tanto para las recetas de la API como para las de la base de datos.*/
 recipes.get("/:id", async (req, res) => {
-  const { id } = req.params;
+	const { id } = req.params;
 
-  try {
-    const recipe = isNaN(id)
-      ? await searchRecipeDB({ id: id })
-      : await searchRecipeAPI({ id: id });
+	try {
+		const recipe = isNaN(id)
+			? await searchRecipeDB({ id: id })
+			: await searchRecipeAPI({ id: id });
 
-    return res.status(200).json(recipe);
-  } catch (error) {
-    return res.status(404).json({ error: error.stack });
-  }
+		return res.status(200).json(recipe);
+	} catch (error) {
+		return res.status(404).json({ error: error.message });
+	}
 });
 
 /*📍 GET | /recipes/name?="..."
@@ -52,8 +52,7 @@ recipes.get("/", async (req, res) => {
 
 		return res.status(200).json(allRecipes);
 	} catch (error) {
-		console.error(error.stack);
-		return res.status(404).json({ error: error.stack });
+		return res.status(404).json({ error: error.message });
 	}
 });
 
@@ -70,7 +69,7 @@ recipes.post("/", async (req, res) => {
 		const newRecipe = await updateRecipeDB({ ...data, diets: dietsArray });
 		return res.status(200).json(newRecipe);
 	} catch (error) {
-		return res.status(404).json({ error: error.stack });
+		return res.status(404).json({ error: error.message });
 	}
 });
 
@@ -82,7 +81,7 @@ recipes.put("/", async (req, res) => {
 		const recipe = await updateRecipeDB({ ...data, diets: dietsArray });
 		return res.status(200).json(recipe);
 	} catch (error) {
-		return res.status(404).json({ error: error.stack });
+		return res.status(404).json({ error: error.message });
 	}
 });
 
@@ -90,13 +89,15 @@ recipes.put("/", async (req, res) => {
 recipes.delete("/:id", async (req, res) => {
 	try {
 		const { id } = req.params;
-		if (!isNaN(id)) return res.status(400).json({ message: `No matching recipes found for '${id}'` });
+		if (!isNaN(id))
+			return res
+				.status(400)
+				.json({ message: `No matching recipes found for '${id}'` });
 		const deleted = await deleteRecipeDB(id);
-		console.log('deleted: ', deleted);
+		console.log("deleted: ", deleted);
 		return res.status(200).json({ message: `successfully removed '${id}'` });
 	} catch (error) {
-		console.log(error.stack);
-		return res.status(404).json({ error: error.stack });
+		return res.status(404).json({ error: error.message });
 	}
 });
 
