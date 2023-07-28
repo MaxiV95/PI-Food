@@ -33,15 +33,17 @@ const getRecipeApiById = async (id, dietsDB) => {
 	const data = await callSpoonacularAPI(
 		`https://api.spoonacular.com/recipes/${id}/information`
 	);
-	if (!data.title) throw Error(`ID: ${id} Not found`);
+	//if (!data.title) throw Error(`ID: ${id} Not found`);
+	//return formatRecipe(data, dietsDB);
 
-	return formatRecipe(data, dietsDB);
+	const recipe = data.results.find((recipe) => +recipe.id == +id);
+	return formatRecipe(recipe, dietsDB);
 };
 
 // Formateo de la respuesta de la API
 const formatRecipe = (recipe, dietsDB) => {
 	const matchingDiets = dietsDB.filter((db) =>
-		recipe.diets.some((diet) => diet.toLowerCase() === db.name.toLowerCase())
+		recipe?.diets?.some((diet) => diet.toLowerCase() === db.name.toLowerCase())
 	);
 	const diets = matchingDiets.map((db) => ({ id: db.id, name: db.name }));
 

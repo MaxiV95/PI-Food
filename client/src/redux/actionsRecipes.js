@@ -34,7 +34,7 @@ export const recipeStore = createSlice({
       state.dietsAll = payload;
     },
     setRecipesAll: (state, { payload }) => {
-      state.recipesAll = payload;
+      state.recipesAll = [...payload];
       state.recipesShown = [...payload];
       state.recipesByName = [];
       state.selected = {
@@ -106,8 +106,8 @@ export const getAllRecipes = () => {
     if (recipesAll.length > 0) return dispatch(setRecipesAll(recipesAll));
 
     try {
-      const response = await getRecipes();
-      return dispatch(setRecipesAll(response));
+      const response = await axios.get("/recipes");
+      return dispatch(setRecipesAll(response.data));
     } catch (error) {
       console.log(error.message);
     }
@@ -195,12 +195,15 @@ export const updateSelected = (option) => {
 
 // Postea una nueva receta
 export const postRecipe = (data) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
+    const { recipesAll } = getState().recipeStore;
     try {
-      await axios.post("/recipes", data);
+      const responsePost = await axios.post("/recipes", data);
+      const newRecipe = responsePost.data;
+      const recipesDB = recipesAll.filter((recipe) => isNaN(recipe.id));
+      const recipeAPI = recipesAll.filter((recipe) => !isNaN(recipe.id));
       alert("Successfully created");
-      const response = await getRecipes();
-      return dispatch(setRecipesAll(response));
+      return dispatch(setRecipesAll([...recipesDB, newRecipe, ...recipeAPI]));
     } catch (error) {
       console.log(error.message);
     }
@@ -209,12 +212,15 @@ export const postRecipe = (data) => {
 
 // Actualiza receta por id
 export const updateRecipeById = (data) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
+    const { recipesAll } = getState().recipeStore;
     try {
-      await axios.put("/recipes", data);
+      const recipes = [...recipesAll];
+      const responseUpdate = await axios.put("/recipes", data);
+      const index = recipes.findIndex((recipe) => recipe.id === data.id);
+      recipes[index] = responseUpdate.data;
       alert("Successfully updated");
-      const response = await getRecipes();
-      return dispatch(setRecipesAll(response));
+      return dispatch(setRecipesAll([...recipes]));
     } catch (error) {
       console.log(error.message);
     }
@@ -227,16 +233,11 @@ export const deleteRecipeById = (id) => {
     const { recipesAll } = getState().recipeStore;
     try {
       await axios.delete(`/recipes/${id}`);
-      alert("successfully removed");
       const recipes = recipesAll.filter((recipe) => recipe.id !== id);
+      alert("successfully removed");
       return dispatch(setRecipesAll(recipes));
     } catch (error) {
       return alert(error.message + `There is no recipe with the ID: ${id}`);
     }
   };
-};
-
-const getRecipes = async () => {
-  const response = await axios.get("/recipes");
-  return response.data;
 };

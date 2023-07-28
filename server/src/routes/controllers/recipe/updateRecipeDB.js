@@ -1,4 +1,5 @@
 const { Recipe, conn } = require("../../../db");
+const searchRecipeDB = require("./searchRecipeDB");
 
 const updateRecipeDB = async ({
 	id,
@@ -40,7 +41,9 @@ const updateRecipeDB = async ({
 		// Confirma la transacción
 		await transaction.commit();
 
-		return recipe;
+		// Devuelve la receta
+		const newRecipe = await searchRecipeDB({ id: recipe.id });
+		return newRecipe;
 	} catch (error) {
 		if (transaction) {
 			await transaction.rollback();

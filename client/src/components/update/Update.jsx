@@ -50,7 +50,6 @@ const RecipeUpdate = () => {
   // Enviar cambios
   const handlerSubmit = async (event) => {
     event.preventDefault();
-    console.log(Object.keys(errors).length);
     if (!Object.keys(errors).length) {
       id
         ? dispatch(updateRecipeById(recipeId))

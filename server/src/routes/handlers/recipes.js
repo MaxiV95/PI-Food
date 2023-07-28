@@ -20,6 +20,7 @@ recipes.get("/:id", async (req, res) => {
 
 		return res.status(200).json(recipe);
 	} catch (error) {
+		console.log(error.stack);
 		return res.status(404).json({ error: error.message });
 	}
 });
