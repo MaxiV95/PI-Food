@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link, useLocation } from "react-router-dom";
-import {
-  getAllDiets,
-  getRecipeById,
-  deleteRecipeById,
-} from "../../redux/actionsRecipes";
+import { getRecipeById, deleteRecipeById } from "../../redux/actionsRecipes";
 import style from "./Detail.module.css";
 import PropTypes from "prop-types";
 
@@ -17,8 +13,8 @@ const Detail = ({ updateDetail = "", block = "" }) => {
 
   useEffect(() => {
     dispatch(getRecipeById(id));
-    dispatch(getAllDiets());
     return () => dispatch(getRecipeById(undefined));
+    // eslint-disable-next-line
   }, []);
 
   const renderedSteps = recipeId?.steps?.map((step, index) => (

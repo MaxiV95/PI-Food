@@ -10,6 +10,7 @@ import style from "./Home.module.css";
 const Home = () => {
   const dispatch = useDispatch();
   const recipesShown = useSelector((state) => state.recipeStore.recipesShown);
+  const dietsAll = useSelector((state) => state.recipeStore.dietsAll);
 
   // Paginado!
   const page = useSelector((state) => state.recipeStore.page);
@@ -20,8 +21,9 @@ const Home = () => {
   const recipes = recipesShown?.slice(startIndex, endIndex);
 
   useEffect(() => {
-    dispatch(getAllRecipes());
-    dispatch(getAllDiets());
+    !recipesShown.length && dispatch(getAllRecipes());
+    !dietsAll.length && dispatch(getAllDiets());
+    // eslint-disable-next-line
   }, []);
 
   return (

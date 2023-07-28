@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import {
-  getRecipeById,
+  getAllDiets,
   handleRecipeFieldChange,
   updateRecipeById,
   postRecipe,
@@ -18,9 +18,9 @@ const RecipeUpdate = () => {
   const recipeId = useSelector((state) => state.recipeStore.recipeId);
   const [errors, setErrors] = useState({});
 
-  // Al montar
   useEffect(() => {
-    return () => dispatch(getRecipeById(undefined));
+    !diets.length && dispatch(getAllDiets());
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -28,19 +28,18 @@ const RecipeUpdate = () => {
   }, [recipeId]);
 
   // Al cambiar algún campo
-  const handle = (event) => {
+  const handleChanges = (event) => {
     const { name, value } = event.target;
-    dispatch(handleRecipeFieldChange({ name, value }));
-  };
-  const handleSpecial = (event) => {
-    const { name, value } = event.target;
-    if (name === "steps") {
-      dispatch(handleRecipeFieldChange({ name, value: value.split("\n") }));
-    }
+    dispatch(
+      handleRecipeFieldChange({
+        name,
+        value: name === "steps" ? value.split("\n") : value,
+      })
+    );
   };
 
   // Al cambiar algún check
-  const checkHandle = (event) => {
+  const handleCheck = (event) => {
     const { name, checked, value, title } = event.target;
     let diets = [...recipeId.diets];
     if (checked) diets.push({ id: value, name: title });
@@ -51,10 +50,12 @@ const RecipeUpdate = () => {
   // Enviar cambios
   const handlerSubmit = async (event) => {
     event.preventDefault();
-    if (!Object.keys(errors).length)
+    console.log(Object.keys(errors).length);
+    if (!Object.keys(errors).length) {
       id
         ? dispatch(updateRecipeById(recipeId))
         : dispatch(postRecipe(recipeId));
+    } else alert("Please correct mistakes");
   };
 
   return (
@@ -73,7 +74,7 @@ const RecipeUpdate = () => {
               type="text"
               value={recipeId?.title}
               name="title"
-              onChange={handle}
+              onChange={handleChanges}
             />
             {errors.title && (
               <span className={style.errores}>{errors.title}</span>
@@ -86,7 +87,7 @@ const RecipeUpdate = () => {
               type="url"
               value={recipeId?.image}
               name="image"
-              onChange={handle}
+              onChange={handleChanges}
             />
             {errors.image && (
               <span className={style.errores}>{errors.image}</span>
@@ -101,7 +102,7 @@ const RecipeUpdate = () => {
               type="number"
               value={recipeId?.healthScore}
               name="healthScore"
-              onChange={handle}
+              onChange={handleChanges}
             />
             {errors.healthScore && (
               <span className={style.errores}>{errors.healthScore}</span>
@@ -125,7 +126,7 @@ const RecipeUpdate = () => {
                             (diet) => diet.id === dietRecipe.id
                           ) || false
                         }
-                        onChange={checkHandle}
+                        onChange={handleCheck}
                       />
                       <label htmlFor="diets">{dietRecipe.name}</label>
                     </span>
@@ -146,7 +147,7 @@ const RecipeUpdate = () => {
               rows="10"
               value={recipeId.summary}
               name="summary"
-              onChange={handle}
+              onChange={handleChanges}
             />
             {errors.summary && (
               <span className={style.errores}>{errors.summary}</span>
@@ -161,13 +162,13 @@ const RecipeUpdate = () => {
               rows="10"
               value={recipeId?.steps?.join("\n")}
               name="steps"
-              onChange={handleSpecial}
+              onChange={handleChanges}
             />
             {errors.steps && (
               <span className={style.errores}>{errors.steps}</span>
             )}
           </h3>
-          <button type="submit">SUBMIT</button>
+          <button>SUBMIT</button>
         </form>
       </div>
 

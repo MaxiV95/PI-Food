@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function About() {
   const [copied, setCopied] = useState(false);
   const onClick = () => {
-    setCopied(!copied);
+    setCopied((prevCopied) => !prevCopied);
   };
 
   return (

@@ -22,7 +22,7 @@ function App() {
       palette2: "palette3",
       palette3: "palette0",
     };
-    setPalette(palettes[palette]);
+    setPalette((prevPalette) => palettes[prevPalette]);
   };
 
   return (
