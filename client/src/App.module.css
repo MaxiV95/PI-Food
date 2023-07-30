@@ -1,23 +1,24 @@
 html,
 body,
 :root {
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
-	font-synthesis: none;
-	font-family: Helvetica, Arial, sans-serif;
-	overflow-x: hidden;
-	min-height: 100vh;
-	width: 100vw;
-	margin: 0%;
-	--navBar-h: 3rem;
-	--footer-h: 10rem;
-	color-scheme: light dark;
-	--close-color: #01ba20ba;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  font-synthesis: none;
+  font-family: Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0%;
+  --navBar-h: 0;
+  --footer-h: 10rem;
+  color-scheme: light dark;
+  --close-color: #01ba20ba;
   --delete-color: #ab0303ba;
   --update-color: #dc7200ba;
   --cancel-color: #ebe699da;
+  --menu-w: 0;
 }
 .palette0 {
   --color: #ffffff;
@@ -53,87 +54,108 @@ body,
 }
 
 .app {
-	background-color: var(--color1);
-	padding-top: calc(var(--navBar-h) + 0.7rem);
-	min-height: calc(100vh - var(--navBar-h) - 0.7rem);
+  background-color: var(--color1);
+  padding-top: calc(var(--navBar-h) + 0.7rem);
+  min-height: calc(100vh - var(--navBar-h) - 0.7rem);
+}
+
+.app .appContent {
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 38.4px);
+}
+
+.menuActive {
+  --menu-w: 15rem;
+}
+
+.content {
+  min-height: 100%;
+  margin-left: calc(var(--menu-w) + 0.5rem);
+}
+@media (max-width: 800px) {
+  .content {
+    margin-left: 0;
+  }
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 span {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 button {
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.34);
-	background-color: var(--color3);
-	color: var(--color);
-	border: none;
-	border-radius: 0.3rem;
-	font-size: 1.3rem;
-	cursor: pointer;
-	transition: box-shadow 0.3s ease;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.34);
+  background-color: var(--color3);
+  color: var(--color);
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
 button:hover {
-	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34);
-	background: radial-gradient(circle, var(--color4), var(--color3));
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34);
+  background: radial-gradient(circle, var(--color4), var(--color3));
 }
 button:active {
-	box-shadow: none;
+  box-shadow: none;
 }
 
 input {
-	border-radius: 0.3rem;
-	border: 1px solid var(--color5);
-	background-color: var(--color1);
-	color: var(--color5);
-	padding-left: 0.5rem;
-	font-size: 1.3rem;
-	font-family: monospace;
-	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.34);
+  border-radius: 0.3rem;
+  border: 1px solid var(--color5);
+  background-color: var(--color1);
+  color: var(--color5);
+  padding-left: 0.5rem;
+  font-size: 1.3rem;
+  font-family: monospace;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.34);
 }
 
-textarea{
-	border-radius: 0.3rem;
-	border: 1px solid var(--color5);
-	background-color: var(--color1);
-	color: var(--color);
-	padding: 0.3rem;
-	font-size: 0.9rem;
-	font-family: monospace;
-	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.34);
+textarea {
+  border-radius: 0.3rem;
+  border: 1px solid var(--color5);
+  background-color: var(--color1);
+  color: var(--color);
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  font-family: monospace;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.34);
 }
 
 select {
-	border-radius: 0.3rem;
-	border: 1px solid var(--color5);
-	background-color: var(--color3);
-	color: var(--color);
-	font-size: 1.1rem;
-	text-align: center;
-	height: 26px;
-	cursor: pointer;
-	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.34);
+  border-radius: 0.3rem;
+  border: 1px solid var(--color5);
+  background-color: var(--color3);
+  color: var(--color);
+  font-size: 1.1rem;
+  text-align: center;
+  height: 26px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.34);
 }
 option {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 h1 {
   margin: 0;
-	margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
   color: var(--color4);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.625);
 }
 
-h2, h3  {
-	margin: 0.5rem;
+h2,
+h3 {
+  margin: 0.5rem;
   color: var(--color5);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.625);
-	align-items: center;
+  align-items: center;
 }
 
 p {

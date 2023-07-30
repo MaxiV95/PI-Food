@@ -116,6 +116,7 @@ const RecipeUpdate = () => {
                   <React.Fragment key={dietRecipe.id}>
                     <span>
                       <input
+                        id={`diet_${dietRecipe.id}`}
                         type="checkbox"
                         value={dietRecipe.id}
                         name="diets"
@@ -127,7 +128,9 @@ const RecipeUpdate = () => {
                         }
                         onChange={handleCheck}
                       />
-                      <label htmlFor="diets">{dietRecipe.name}</label>
+                      <label htmlFor={`diet_${dietRecipe.id}`}>
+                        {dietRecipe.name}
+                      </label>
                     </span>
                   </React.Fragment>
                 );

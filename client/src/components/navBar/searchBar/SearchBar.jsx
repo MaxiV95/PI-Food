@@ -4,23 +4,22 @@ import {
   getAllRecipes,
   getRecipeByName,
   updateSelected,
-} from "../../../../redux/actionsRecipes";
-import TYPE from "../../../../redux/types";
+} from "../../../redux/actionsRecipes";
+import TYPE from "../../../redux/types";
 import style from "./SearchBar.module.css";
 import SearchIcon from "./SearchIcon";
+import PropTypes from "prop-types";
 
-const SearchBar = () => {
+const SearchBar = ({ unfolded = "" }) => {
   const dispatch = useDispatch();
   const diets = useSelector((state) => state.recipeStore.dietsAll);
   const selected = useSelector((state) => state.recipeStore.selected);
+  const [name, setName] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     dispatch(updateSelected({ [name]: value }));
   };
-
-  // Buscar por nombre
-  const [name, setName] = useState("");
 
   const onSearch = () => {
     try {
@@ -32,7 +31,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className={style.searchBarContainer}>
+    <div className={`${style.searchBarContainer} ${unfolded}`}>
       <button onClick={() => dispatch(getAllRecipes())}>All Recipes</button>
 
       <span>
@@ -82,6 +81,10 @@ const SearchBar = () => {
       </select>
     </div>
   );
+};
+
+SearchBar.propTypes = {
+  unfolded: PropTypes.string,
 };
 
 export default SearchBar;

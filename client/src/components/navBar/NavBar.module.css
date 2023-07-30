@@ -1,20 +1,24 @@
 .navBarContainer {
-	display: flex;
 	position: fixed;
-	flex-direction: row;
-	top: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 0.3rem;
+	gap: 0.3em;
+	width: var(--menu-w);
+	min-height: 1vh;
+	background: #000000a0;
+	border-radius: 0.5rem;
 	z-index: 1;
-	margin-left: 0.3rem;
-	margin-right: 0.3rem;
-	padding-top: 0.7rem;
-	width: 99%;
-	height: var(--navBar-h);
 }
 
 .navBarContainer span {
 	justify-content: space-around;
 	border-radius: 8px;
-	width: 100vw;
+	width: var(--menu-w);
 	border: solid var(--color2);
 	background-color: var(--color2);
+}
+
+.navBarContainer button {
+	width: 100%;
 }

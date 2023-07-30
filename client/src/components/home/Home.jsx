@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllRecipes, getAllDiets } from "../../redux/actionsRecipes";
 
-import SearchBar from "./helpers/searchBar/SearchBar";
 import RecipesContainer from "./helpers/recipesContainer/RecipesContainer";
 import Paginated from "./helpers/paginated/Paginated";
 import style from "./Home.module.css";
@@ -28,13 +27,14 @@ const Home = () => {
 
   return (
     <div className={style.homeContainer}>
-      <SearchBar />
-      <div className={style.homeContent}>
-        <h1>RECIPES FINDER</h1>
-        <Paginated page={page} max={max} />
-        <RecipesContainer recipes={recipes} />
-        <Paginated page={page} max={max} />
+      <div className={style.title}>
+        <h1>
+          <z>RECIPES</z> <z>FINDER</z>
+        </h1>
       </div>
+      <Paginated page={page} max={max} />
+      <RecipesContainer recipes={recipes} />
+      <Paginated page={page} max={max} />
     </div>
   );
 };

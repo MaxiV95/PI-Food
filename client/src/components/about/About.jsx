@@ -63,7 +63,7 @@ export default function About() {
         <h2>🎭Intereses/Gustos🎭</h2>
         <ul>
           <li> 🚶 Senderismo montañoso.</li>
-          <li>👨‍👩‍👦‍👧 Reuniones con familia y amistades.</li>
+          <li>👨‍👩‍👦 Reuniones con familia y amistades.</li>
           <li> 🏊 Competencia de nado en aguas abiertas.</li>
         </ul>
 

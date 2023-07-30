@@ -24,6 +24,7 @@ const initialState = {
   },
 
   page: 1,
+  menu: false,
 };
 
 export const recipeStore = createSlice({
@@ -67,6 +68,9 @@ export const recipeStore = createSlice({
     setPage: (state, { payload }) => {
       state.page = payload;
     },
+    setMenu: (state, { payload }) => {
+      state.menu = payload;
+    },
   },
 });
 export const {
@@ -77,6 +81,7 @@ export const {
   handleRecipeFieldChange,
   setSelected,
   setPage,
+  setMenu,
 } = recipeStore.actions;
 export default recipeStore.reducer;
 
