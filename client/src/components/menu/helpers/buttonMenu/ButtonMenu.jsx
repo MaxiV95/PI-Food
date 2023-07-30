@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
+import { setMenu } from "../../../../redux/actionsRecipes";
 import style from "./ButtonMenu.module.css";
-import { setMenu } from "../../redux/actionsRecipes";
 
 const ButtonMenu = () => {
   const dispatch = useDispatch();
   const menu = useSelector((state) => state.recipeStore.menu);
   return (
-    <div className={style.checkIconContainer}>
+    <div className={`${style.checkIconContainer}`}>
       <input
         hidden
         className={style.checkIcon}

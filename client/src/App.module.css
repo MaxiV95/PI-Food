@@ -9,16 +9,16 @@ body,
   font-family: Helvetica, Arial, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
-  width: 100vw;
+  min-width: 100vw;
   margin: 0%;
   --navBar-h: 0;
-  --footer-h: 10rem;
+  --footer-h: 0;
+  --menu-w: 0;
   color-scheme: light dark;
   --close-color: #01ba20ba;
   --delete-color: #ab0303ba;
   --update-color: #dc7200ba;
   --cancel-color: #ebe699da;
-  --menu-w: 0;
 }
 .palette0 {
   --color: #ffffff;
@@ -53,28 +53,27 @@ body,
   --color5: #a86eff;
 }
 
-.app {
-  background-color: var(--color1);
-  padding-top: calc(var(--navBar-h) + 0.7rem);
-  min-height: calc(100vh - var(--navBar-h) - 0.7rem);
-}
-
-.app .appContent {
-  display: flex;
-  flex-direction: row;
-  min-height: calc(100vh - 38.4px);
-}
-
 .menuActive {
   --menu-w: 15rem;
 }
 
-.content {
-  min-height: 100%;
+.app {
+  display: flex;
+  background-color: var(--color1);
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.appContent {
+  margin-top: 3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  min-height: calc(100vh - 3rem);
+  width: 100%;
   margin-left: calc(var(--menu-w) + 0.5rem);
 }
 @media (max-width: 800px) {
-  .content {
+  .appContent {
     margin-left: 0;
   }
 }

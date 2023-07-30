@@ -1,7 +1,5 @@
 .homeContainer {
-  margin-left: 0.3rem;
-	width: calc(100vw - 1.5rem - var(--menu-w));
-  background-color: var(--color1);
+	width: 100%;
 }
 
 .homeContainer .title {

@@ -3,13 +3,17 @@
   min-height: 100%;
   min-width: 100%;
   justify-content: center;
-  background-color: var(--color1);
+}
+.aboutContainer h1 {
+  color: var(--color);
 }
 
 .myContainer {
   text-align: center;
-  width: 40%;
-  background-color: var(--color1);
+  width: 50%;
+}
+.myContainer button {
+  color: var(--color5);
 }
 .myContainer span {
   justify-content: center;
@@ -20,10 +24,11 @@
   margin: 0;
 }
 .myContainer img {
-  height: 14rem;
-  width: 14rem;
+  height: 15rem;
+  width: 15rem;
   border-radius: 50%;
   padding-top: 5rem;
+  margin-top: -5rem;
   margin-bottom: 0rem;
 }
 .myContainer .copied {
@@ -32,8 +37,7 @@
 
 .moreContainer {
   padding-top: 1rem;
-  width: 40%;
-  background-color: var(--color1);
+  width: 50%;
 }
 .moreContainer h2 {
   margin-top: 1rem;
@@ -47,12 +51,11 @@
     flex-direction: column;
   }
   .myContainer {
-    width: 90%;
-    padding: 1rem;
+    width: 98%;
   }
   .moreContainer {
-    width: 90%;
-    padding: 1rem;
+    width: 98%;
+    padding-top: 2rem;
     text-align: center;
     justify-content: center;
   }

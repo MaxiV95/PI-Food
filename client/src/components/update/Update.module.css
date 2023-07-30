@@ -1,20 +1,20 @@
 .updateContainer {
   display: flex;
-	flex-direction: row;
-	width: calc(100vw - 1.2rem - var(--menu-w));
-  background-color: var(--color1);
+  flex-direction: row;
+  width: 99%;
 }
 
 .formContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  padding-top: 1rem;
   width: 50%;
 }
-
-.formContainer .cancel {
+.formContainer .cancelButton {
+  position: absolute;
+  margin-top: -2rem;
+  margin-left: -3rem;
+  z-index: 1;
   color: var(--cancel-color);
   margin-right: 0.8rem;
   margin-bottom: 0.8rem;
@@ -25,17 +25,16 @@
 form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 98%;
 }
-
 form button {
   margin-left: 0.7rem;
+  margin-bottom: 1rem;
 }
-
 form .line {
   display: flex;
 }
-form .line input{
+form .line input {
   height: 1rem;
   flex-grow: 1;
 }
@@ -44,15 +43,13 @@ form input {
   font-size: 1rem;
   color: var(--color);
 }
-
 form textarea {
   width: 100%;
   resize: vertical;
   overflow: hidden;
   height: auto;
-  min-height: 50px; 
+  min-height: 50px;
 }
-
 form .errores {
   margin-top: 10px;
   display: block;
@@ -62,7 +59,6 @@ form .errores {
   font-weight: bold;
   text-align: center;
 }
-
 form .allDiets {
   display: flex;
   flex-direction: column;
@@ -79,24 +75,23 @@ form .allDiets label {
   align-items: center;
 }
 
-.detailContainer{
-  width: 30%;
-  padding: 4rem;
-  padding-top: 2rem;
-  border-width: 5px;
+.preview {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.6rem;
   border-radius: 1rem;
-  border-color: var(--color2);
+  background-color: var(--color2);
+  color: var(--color5);
+}
+
+.detailContainer {
+  width: 50%;
+  padding-left: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.detailContainer .preview {
-  width: 100%;
-  text-align: center;
-  border-radius: 1rem;
-  background-color: var(--color2);
-  color: var(--color3);
-}
+
 .updateDetail {
   flex-direction: column;
 }
@@ -106,16 +101,14 @@ form .allDiets label {
   width: 100%;
 }
 
-@media (max-width: 900px) { 
+@media (max-width: 900px) {
   .updateContainer {
     flex-direction: column;
   }
   .formContainer {
-    width: 90%;
-    padding: 1rem;
+    width: 100%;
   }
-  .detailContainer{
-    width: 95%;
-    padding: 1rem;
+  .detailContainer {
+    width: 98%;
   }
 }

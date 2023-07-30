@@ -22,7 +22,7 @@ export default function About() {
               rel="noreferrer"
               target="_blank"
             >
-              Github
+              <button>Github</button>
             </a>
           </h2>
           <h2>
@@ -31,7 +31,7 @@ export default function About() {
               rel="noreferrer"
               target="_blank"
             >
-              Linkedin
+              <button>Linkedin</button>
             </a>
           </h2>
         </span>
@@ -45,14 +45,12 @@ export default function About() {
       </div>
 
       <div className={style.moreContainer}>
-        <h1>Sobre mi...</h1>
-
-        <h2>🤔Quien soy?🤔</h2>
+        <h2>🤔 Sobre mi... 🤔</h2>
         <p>
           Dicen que definirse es limitarse... pero aquí hay un poco sobre mi:
         </p>
 
-        <h2>🏅Estudios🏅</h2>
+        <h2>🏅 Estudios 🏅</h2>
         <p>
           Siempre tuve interés sobre el área técnica, la resolución de
           rompecabezas y gusto por la tecnología.
@@ -60,14 +58,14 @@ export default function About() {
           Tecnicatura en electrónica, Gasista, Electricista y Tec en AA
         </p>
 
-        <h2>🎭Intereses/Gustos🎭</h2>
+        <h2>🎭 Intereses/Gustos 🎭</h2>
         <ul>
           <li> 🚶 Senderismo montañoso.</li>
           <li>👨‍👩‍👦 Reuniones con familia y amistades.</li>
           <li> 🏊 Competencia de nado en aguas abiertas.</li>
         </ul>
 
-        <h2>🔄En proceso...🔄</h2>
+        <h2>🔄 En proceso... 🔄</h2>
         <ul>
           <li>💻 Nuevas técnicas de programación.</li>
           <li> 🕺 Clases de salsa y bachata.</li>

@@ -1,6 +1,8 @@
 .checkIconContainer{
-  padding: 0.5rem;
+  padding: 0.9rem;
   max-width: 50%;
+  position: fixed;
+  z-index: 1;
 }
 
 .iconMenu {

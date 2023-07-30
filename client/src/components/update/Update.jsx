@@ -62,11 +62,12 @@ const RecipeUpdate = () => {
       <div className={style.formContainer}>
         {id && (
           <Link to={`/detail/${id}`}>
-            <button className={style.cancel}>CANCEL</button>
+            <button className={style.cancelButton}>CANCEL</button>
           </Link>
         )}
 
         <form onSubmit={handlerSubmit}>
+          <h1 className={style.preview}>-- {id ? "UPDATE" : "CREATE"} --</h1>
           <h2 className={style.line}>
             <label htmlFor="title">Title: </label>
             <input

@@ -3,7 +3,7 @@ import { useLocation, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import {
-  NavBar,
+  Menu,
   Landing,
   Home,
   Detail,
@@ -11,7 +11,6 @@ import {
   About,
   NotFound,
 } from "./components/";
-import ButtonMenu from "./components/buttonMenu/ButtonMenu";
 
 function App() {
   const location = useLocation();
@@ -34,21 +33,17 @@ function App() {
         menu ? style.menuActive : ""
       }`}
     >
-      {location.pathname !== "/" && <ButtonMenu />}
+      {location.pathname !== "/" && <Menu togglePalette={togglePalette} />}
+
       <div className={style.appContent}>
-        {location.pathname !== "/" && menu && (
-          <NavBar togglePalette={togglePalette} />
-        )}
-        <div className={style.content}>
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/detail/:id" element={<Detail />} />
-            <Route path="/update/:id?" element={<Update />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/update/:id?" element={<Update />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
     </div>
   );

@@ -4,8 +4,8 @@ import {
   getAllRecipes,
   getRecipeByName,
   updateSelected,
-} from "../../../redux/actionsRecipes";
-import TYPE from "../../../redux/types";
+} from "../../../../../redux/actionsRecipes";
+import TYPE from "../../../../../redux/types";
 import style from "./SearchBar.module.css";
 import SearchIcon from "./SearchIcon";
 import PropTypes from "prop-types";

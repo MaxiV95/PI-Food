@@ -1,44 +1,40 @@
 .detailContainer {
   display: flex;
-  width: 100%;
-  background-color: var(--color1);
+  width: 99%;
 }
-
 .detailContainer h1 {
   margin-bottom: 0.5rem;
 }
 
 .detailContainer .block1 {
-  padding: 1rem;
+  padding-left: 1rem;
   width: 35%;
 }
-
 .detailContainer .block1 img {
   border-radius: 1.5rem;
   height: auto;
   max-width: 100%;
 }
-
-.block1 span button {
-  margin-right: 0.8rem;
-  margin-bottom: 0.8rem;
+.detailContainer .block1 span button {
+  margin:1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   font-size: 1.1rem;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.878);
 }
-.block1 span .close {
+.detailContainer .block1 span .close {
   color: var(--close-color);
 }
-.block1 span .delete {
+.detailContainer .block1 span .delete {
   color: var(--delete-color);
 }
-.block1 span .update {
+.detailContainer .block1 span .update {
   color: var(--update-color);
 }
 
 .detailContainer .block2 {
-  margin-top: 1rem;
-  padding: 0.8rem;
-  width: 55%;
+  width: 65%;
+  margin-top: 3rem;
 }
 
 @media (max-width: 900px) { 
@@ -46,14 +42,13 @@
     flex-direction: column;
   }
   .detailContainer .block1 {
-    padding: 1rem;
     padding-bottom: 0;
-    width: 90%;
+    width: 100%;
   }
   .detailContainer .block2 {
     margin: 0;
     padding: 1rem;
     padding-top: 0;
-    width: 90%;
+    width: 98%;
   }
 }
