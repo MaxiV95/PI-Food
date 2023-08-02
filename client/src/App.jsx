@@ -1,7 +1,7 @@
 import style from "./App.module.css";
 import { useLocation, Route, Routes } from "react-router-dom";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Menu,
   Landing,
@@ -11,9 +11,16 @@ import {
   About,
   NotFound,
 } from "./components/";
+import { getAllDiets, getAllRecipes } from "./redux/actionsRecipes";
 
 function App() {
-  const location = useLocation();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllDiets());
+    dispatch(getAllRecipes());
+    // eslint-disable-next-line
+  }, []);
+
   const menu = useSelector((state) => state.recipeStore.menu);
   const [palette, setPalette] = useState("palette0");
 
@@ -26,6 +33,8 @@ function App() {
     };
     setPalette((prevPalette) => palettes[prevPalette]);
   };
+
+  const location = useLocation();
 
   return (
     <div

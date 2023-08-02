@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import {
-  getAllDiets,
   handleRecipeFieldChange,
   updateRecipeById,
   postRecipe,
@@ -17,11 +16,6 @@ const RecipeUpdate = () => {
   const diets = useSelector((state) => state.recipeStore.dietsAll);
   const recipeId = useSelector((state) => state.recipeStore.recipeId);
   const [errors, setErrors] = useState({});
-
-  useEffect(() => {
-    !diets.length && dispatch(getAllDiets());
-    // eslint-disable-next-line
-  }, []);
 
   useEffect(() => {
     setErrors(validate(recipeId));
