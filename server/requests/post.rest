@@ -1,0 +1,20 @@
+### Para crear receta, tal vez debas actualizar id
+POST http://localhost:3001/recipes
+Content-Type: application/json
+
+{
+  "title": "prueba",
+  "image": "https://spoonacular.com/recipeImages/716426-312x231.jpg",
+  "summary": "sumary",
+  "healthScore": 75,
+  "steps": [
+    "step 1. ",
+    "step 2."
+  ],
+  "diets": [
+    {
+      "id": "7cbad046-ad7e-4f0e-8b91-07560b3b2e9b",
+      "name": "Dairy free"
+    }
+  ]
+}

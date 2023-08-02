@@ -1,4 +1,4 @@
-GET http://localhost:3001/diets
+GET http://localhost:3001/
 Content-Type: application/json
 Authorization: Bearer asd123
 

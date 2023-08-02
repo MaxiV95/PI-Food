@@ -68,7 +68,7 @@ recipes.post("/", async (req, res) => {
 		const data = req.body;
 		const dietsArray = data.diets.map((diet) => diet.id);
 		const newRecipe = await updateRecipeDB({ ...data, diets: dietsArray });
-		return res.status(200).json(newRecipe);
+		return res.status(201).json(newRecipe);
 	} catch (error) {
 		return res.status(404).json({ error: error.message });
 	}
@@ -96,7 +96,7 @@ recipes.delete("/:id", async (req, res) => {
 				.json({ message: `No matching recipes found for '${id}'` });
 		const deleted = await deleteRecipeDB(id);
 		console.log("deleted: ", deleted);
-		return res.status(200).json({ message: `successfully removed '${id}'` });
+		return res.status(204).json({ message: `successfully removed '${id}'` });
 	} catch (error) {
 		return res.status(404).json({ error: error.message });
 	}

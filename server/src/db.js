@@ -9,7 +9,8 @@
 
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
-const fs = require('fs');
+//const fs = require('fs');
+const fs = require('node:fs') // a partir de Node 16, se recomienda poner node:
 const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY } = process.env;
 
