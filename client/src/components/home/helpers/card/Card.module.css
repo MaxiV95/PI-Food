@@ -8,6 +8,12 @@
   width: 20rem;
   background-color: var(--color3);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.499);
+  view-timeline-name: --card;
+  view-timeline-axis: block;
+  animation-timeline: --card;
+  animation-name: show;
+  animation-range: entry 25% cover 40%;
+  animation-fill-mode: both;
 }
 
 .cardContainer img {
@@ -36,4 +42,15 @@
   margin-left: 10px;
   text-align: center;
   font-family: monospace;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
 }
