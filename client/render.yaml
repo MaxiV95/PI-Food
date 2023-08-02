@@ -1,0 +1,7 @@
+# render.yaml
+routes:
+  - src: /.*
+    headers:
+      cache-control: "public, max-age=0, must-revalidate"
+    type: rewrite
+    dest: /index.html
