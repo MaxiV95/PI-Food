@@ -45,10 +45,9 @@ const updateRecipeDB = async ({
 		const newRecipe = await searchRecipeDB({ id: recipe.id });
 		return newRecipe;
 	} catch (error) {
-		if (transaction) {
+		if (transaction.finished !== "commit") {
 			await transaction.rollback();
 		}
-
 		throw error;
 	}
 };
