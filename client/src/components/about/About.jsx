@@ -1,5 +1,4 @@
 import style from "./About.module.css";
-import photo from "./img/MaxiV95.jpeg";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
 
@@ -12,7 +11,10 @@ export default function About() {
   return (
     <div className={style.aboutContainer}>
       <div className={style.myContainer}>
-        <img src={photo} alt="Maximiliano Van Megroot" />
+        <img
+          src="https://avatars.githubusercontent.com/u/118027004"
+          alt="Maximiliano Van Megroot"
+        />
         <h1>Maximiliano Van Megroot</h1>
 
         <span>
@@ -53,9 +55,9 @@ export default function About() {
         <h2>🏅 Estudios 🏅</h2>
         <p>
           Siempre tuve interés sobre el área técnica, la resolución de
-          rompecabezas y gusto por la tecnología.
-          <br />✅ Lo que me ha llevado a estudiar Full Stack Web Developer,
-          Tecnicatura en electrónica, Gasista, Electricista y Tec en AA
+          rompecabezas y gusto por la tecnología. Lo que me ha llevado a
+          estudiar Full Stack Web Developer, Tecnicatura en electrónica,
+          Gasista, Electricista y Tec en AA
         </p>
 
         <h2>🎭 Intereses/Gustos 🎭</h2>
