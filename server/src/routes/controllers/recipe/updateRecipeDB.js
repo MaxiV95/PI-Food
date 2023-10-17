@@ -49,6 +49,8 @@ const updateRecipeDB = async ({
 			await transaction.rollback();
 		}
 		throw error;
+	} finally {
+		
 	}
 };
 
