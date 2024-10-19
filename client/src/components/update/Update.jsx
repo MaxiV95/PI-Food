@@ -118,7 +118,7 @@ const RecipeUpdate = () => {
                         title={dietRecipe.name}
                         checked={
                           recipeId?.diets?.some(
-                            (diet) => diet.id === dietRecipe.id
+                            (diet) => diet.id == dietRecipe.id
                           ) || false
                         }
                         onChange={handleCheck}

@@ -1,6 +1,8 @@
 const callSpoonacularAPI = require("../callSpoonacularAPI");
 const getAllDiets = require("../diet/getAllDiets");
 
+let dataRecipe = [];
+
 // Función principal
 const searchRecipeAPI = async ({ id, name }) => {
 	const dietsDB = await getAllDiets();
@@ -11,19 +13,22 @@ module.exports = searchRecipeAPI;
 
 // Búsqueda 100 primeras, if(name) filtrado por name en servidor
 const getRecipesAPI = async (name, dietsDB) => {
-	const data = await callSpoonacularAPI(
-		`https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=100`
-	);
-	const recipesAPI = data.results?.map((recipe) =>
-		formatRecipe(recipe, dietsDB)
-	);
+	if (dataRecipe.length == 0) {
+		const data = await callSpoonacularAPI(
+			`https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=100`
+		);
+		const recipesAPI = data.results?.map((recipe) =>
+			formatRecipe(recipe, dietsDB)
+		);
+		dataRecipe = recipesAPI;
+	}
 
-	if (!name) return recipesAPI;
+	if (!name) return dataRecipe;
 	if (typeof name !== "string" || !name.trim())
 		throw Error("The name must be a non-empty string");
 
 	// Si name es una cadena de texto no vacía, filtra por name
-	return recipesAPI.filter((recipe) =>
+	return dataRecipe.filter((recipe) =>
 		recipe.title.toLowerCase().includes(name.toLowerCase())
 	);
 };

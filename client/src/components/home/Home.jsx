@@ -19,7 +19,7 @@ const Home = () => {
     <div className={style.homeContainer}>
       <div className={style.title}>
         <h1>
-          <z>RECIPES</z> <z>FINDER</z>
+          <span>RECIPES</span> <span>FINDER</span>
         </h1>
       </div>
       <Paginated page={page} max={max} />

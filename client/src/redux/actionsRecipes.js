@@ -15,7 +15,7 @@ const initialState = {
     steps: [],
     image: "",
     diets: [],
-  }, // buscadas por id
+  }, // buscada por id
 
   selected: {
     byDiet: "",
@@ -46,8 +46,8 @@ export const recipeStore = createSlice({
       state.page = 1;
     },
     setRecipesByName: (state, { payload }) => {
-      state.recipesShown = payload;
-      state.recipesByName = payload;
+      state.recipesShown = [...payload];
+      state.recipesByName = [...payload];
       state.page = 1;
     },
     setRecipeId: (state, { payload }) => {
@@ -199,16 +199,17 @@ export const updateSelected = (option) => {
 };
 
 // Postea una nueva receta
-export const postRecipe = (data) => {
+// export const postRecipe = (data) => {
+export const postRecipe = () => {
   return async (dispatch, getState) => {
     const { recipesAll } = getState().recipeStore;
     try {
-      const responsePost = await axios.post("/recipes", data);
-      const newRecipe = responsePost.data;
+      // const responsePost = await axios.post("/recipes", data);
+      // const newRecipe = responsePost.data;
       const recipesDB = recipesAll.filter((recipe) => isNaN(recipe.id));
       const recipeAPI = recipesAll.filter((recipe) => !isNaN(recipe.id));
-      alert("Successfully created");
-      return dispatch(setRecipesAll([...recipesDB, newRecipe, ...recipeAPI]));
+      alert("Creation service not available");
+      return dispatch(setRecipesAll([...recipesDB, ...recipeAPI]));
     } catch (error) {
       console.log(error.message);
     }

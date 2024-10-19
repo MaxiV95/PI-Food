@@ -37,7 +37,7 @@ recipes.get("/", async (req, res) => {
 	try {
 		// Busca por 'name' en la API y Base de datos
 		const [allRecipesDB, allRecipesAPI] = await Promise.all([
-			searchRecipeDB({ name: name }),
+			// searchRecipeDB({ name: name }),
 			searchRecipeAPI({ name: name }),
 		]);
 
@@ -64,11 +64,12 @@ Toda la información debe ser recibida por body.
 Debe crear la receta en la base de datos, y esta debe estar relacionada con 
 los tipos de dieta indicados (al menos uno).*/
 recipes.post("/", async (req, res) => {
-	try {
-		const data = req.body;
-		const dietsArray = data.diets.map((diet) => diet.id);
-		const newRecipe = await updateRecipeDB({ ...data, diets: dietsArray });
-		return res.status(201).json(newRecipe);
+	try {		
+		// const data = req.body;
+		// const dietsArray = data.diets.map((diet) => diet.id);
+		// const newRecipe = await updateRecipeDB({ ...data, diets: dietsArray });
+		// return res.status(201).json(newRecipe);
+		return res.status(201).json({ message: "It does not work" });
 	} catch (error) {
 		return res.status(404).json({ error: error.message });
 	}
